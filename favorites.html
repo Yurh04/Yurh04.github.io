@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorites | Jack Yu</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div class="logo">Jack Yu / Favorites</div>
+      <nav class="nav">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a class="is-active" href="./favorites.html">Favorites</a>
+        <a href="./devlog.html">Dev Log</a>
+        <a href="./travel.html">Travel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="glass favorites-hero" data-reveal>
+      <div class="hero-top">
+        <div>
+          <h1 class="hero-title">My Favorites</h1>
+          <p class="hero-subtitle">Football · Clubs · Gaming</p>
+        </div>
+        <div class="mini-stats">
+          <div>
+            <span>10+</span>
+            <small>Years Watching</small>
+          </div>
+          <div>
+            <span>3</span>
+            <small>Go-To Games</small>
+          </div>
+          <div>
+            <span>4</span>
+            <small>Favorite Clubs</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="favorites-grid">
+        <article class="card card-football">
+          <div class="card-header">
+            <h3>Football</h3>
+            <span class="pill">CM · Playmaker</span>
+          </div>
+          <p class="muted-text">Strengths: through passes, late runs, long shots.</p>
+          <div class="video-frame">
+            <video src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b0/Football_training.webm/Football_training.webm.480p.vp9.webm" controls muted playsinline></video>
+          </div>
+          <small class="muted-text">Space reserved for match highlights / training videos.</small>
+        </article>
+
+        <article class="card card-clubs">
+          <div class="card-header">
+            <h3>Favorite Clubs</h3>
+            <span class="pill">Icons I Follow</span>
+          </div>
+          <div class="club-badges">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" loading="lazy" />
+              <figcaption>Real Madrid</figcaption>
+            </figure>
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg" alt="Borussia Dortmund" loading="lazy" />
+              <figcaption>Dortmund</figcaption>
+            </figure>
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg" alt="AC Milan" loading="lazy" />
+              <figcaption>AC Milan</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/4/4c/Beijing_Guoan_F.C._logo.png"
+                alt="Beijing Guoan"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/5/5f/Beijing_Guoan_FC_tifo.jpg';"
+              />
+              <figcaption>Beijing Guoan</figcaption>
+            </figure>
+          </div>
+          <p class="muted-text">Real Madrid · Beijing Guoan · Dortmund · AC Milan</p>
+        </article>
+
+        <article class="card card-gaming">
+          <div class="card-header">
+            <h3>Gaming</h3>
+            <span class="pill">Esports Mood</span>
+          </div>
+          <p class="muted-text">My go-to esports titles:</p>
+          <div class="badge-list">
+            <span class="badge">FC26</span>
+            <span class="badge">王者荣耀</span>
+            <span class="badge">和平精英</span>
+          </div>
+          <div class="game-gallery">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Gaming controller" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1485988412941-77a35537dae4?auto=format&fit=crop&w=600&q=80" alt="Esports arena" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=600&q=80" alt="Keyboard and mouse" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Gaming setup" loading="lazy" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="footer">Back to <a href="./index.html">Home</a></div>
+  </main>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
