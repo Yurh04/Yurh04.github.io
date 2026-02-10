@@ -68,7 +68,13 @@ if (mapContainer && window.L) {
 
     const visited = new Set([
       "china",
-      "spain",
+      "south korea",
+      "republic of korea",
+      "korea, republic of",
+      "singapore",
+      "qatar",
+      "united arab emirates",
+      "uae",
       "portugal",
       "austria",
       "germany",
@@ -76,6 +82,18 @@ if (mapContainer && window.L) {
       "belgium",
       "italy",
       "switzerland",
+      "united kingdom",
+      "uk",
+      "france",
+      "spain",
+      "japan",
+      "taiwan",
+      "taiwan, province of china",
+      "hong kong",
+      "china, hong kong sar",
+      "hong kong sar china",
+      "thailand",
+      "indonesia",
     ]);
 
     points

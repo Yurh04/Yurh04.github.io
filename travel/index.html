@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel | Jack Yu</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div class="logo">Jack Yu / Travel</div>
+      <nav class="nav">
+        <a href="../">Home</a>
+        <a href="../about/">About</a>
+        <a href="../favorites/">Favorites</a>
+        <a href="../devlog/">Dev Log</a>
+        <a href="../football/">Football</a>
+        <a class="is-active" href="../travel/">Travel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="glass" data-reveal>
+      <h1 class="hero-title">Travel Gallery</h1>
+      <p class="hero-subtitle">World map · Beijing to every destination.</p>
+
+      <div class="map-wrap">
+        <div id="travel-map"></div>
+        <div class="map-legend">Beijing → Destinations</div>
+        <div class="map-data" hidden>
+          <span data-name="Beijing" data-lat="39.9042" data-lon="116.4074" data-type="origin"></span>
+          <span data-name="Seoul" data-lat="37.5665" data-lon="126.9780" data-type="destination"></span>
+          <span data-name="Singapore" data-lat="1.3521" data-lon="103.8198" data-type="destination"></span>
+          <span data-name="Doha" data-lat="25.2854" data-lon="51.5310" data-type="destination"></span>
+          <span data-name="Abu Dhabi" data-lat="24.4539" data-lon="54.3773" data-type="destination"></span>
+          <span data-name="London" data-lat="51.5074" data-lon="-0.1278" data-type="destination"></span>
+          <span data-name="Paris" data-lat="48.8566" data-lon="2.3522" data-type="destination"></span>
+          <span data-name="Madrid" data-lat="40.4168" data-lon="-3.7038" data-type="destination"></span>
+          <span data-name="Lisbon" data-lat="38.7223" data-lon="-9.1393" data-type="destination"></span>
+          <span data-name="Vienna" data-lat="48.2082" data-lon="16.3738" data-type="destination"></span>
+          <span data-name="Berlin" data-lat="52.52" data-lon="13.4050" data-type="destination"></span>
+          <span data-name="Amsterdam" data-lat="52.3676" data-lon="4.9041" data-type="destination"></span>
+          <span data-name="Brussels" data-lat="50.8503" data-lon="4.3517" data-type="destination"></span>
+          <span data-name="Rome" data-lat="41.9028" data-lon="12.4964" data-type="destination"></span>
+          <span data-name="Zurich" data-lat="47.3769" data-lon="8.5417" data-type="destination"></span>
+          <span data-name="Tokyo" data-lat="35.6762" data-lon="139.6503" data-type="destination"></span>
+          <span data-name="Taipei" data-lat="25.0330" data-lon="121.5654" data-type="destination"></span>
+          <span data-name="Hong Kong" data-lat="22.3193" data-lon="114.1694" data-type="destination"></span>
+          <span data-name="Bangkok" data-lat="13.7563" data-lon="100.5018" data-type="destination"></span>
+          <span data-name="Jakarta" data-lat="-6.2088" data-lon="106.8456" data-type="destination"></span>
+        </div>
+      </div>
+
+      <div class="travel-grid">
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seoul%20Skyline%20%286907571755%29.jpg" alt="South Korea" loading="lazy" />
+          <div class="overlay">
+            <strong>South Korea</strong>
+            <span>2025</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Singapore%20Skyline.jpg" alt="Singapore" loading="lazy" />
+          <div class="overlay">
+            <strong>Singapore</strong>
+            <span>2025</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Doha%20skyline.jpg" alt="Qatar" loading="lazy" />
+          <div class="overlay">
+            <strong>Qatar</strong>
+            <span>2024</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Abu%20Dhabi%20Skyline.jpg" alt="UAE" loading="lazy" />
+          <div class="overlay">
+            <strong>UAE</strong>
+            <span>2024</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barcelona%20Skyline.jpg" alt="Spain" loading="lazy" />
+          <div class="overlay">
+            <strong>Spain</strong>
+            <span>2024.07–08</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lisbon%20Skyline%20%28217154099%29.jpeg" alt="Portugal" loading="lazy" />
+          <div class="overlay">
+            <strong>Portugal</strong>
+            <span>2024.07–08</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vienna%20Skyline.jpg" alt="Austria" loading="lazy" />
+          <div class="overlay">
+            <strong>Austria</strong>
+            <span>2023.07–08</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Berlin%20Skyline.jpg" alt="Germany" loading="lazy" />
+          <div class="overlay">
+            <strong>Germany</strong>
+            <span>2023.07–08</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Amsterdam%20skyline.jpg" alt="Netherlands" loading="lazy" />
+          <div class="overlay">
+            <strong>Netherlands</strong>
+            <span>2023.07–08</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Brussels%20skyline.jpg" alt="Belgium" loading="lazy" />
+          <div class="overlay">
+            <strong>Belgium</strong>
+            <span>2023.07–08</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/London%20Skyline.jpg" alt="United Kingdom" loading="lazy" />
+          <div class="overlay">
+            <strong>United Kingdom</strong>
+            <span>2019</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rome%20skyline%20panorama.jpg" alt="Italy" loading="lazy" />
+          <div class="overlay">
+            <strong>Italy</strong>
+            <span>2019</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Z%C3%BCrich%20Skyline.JPG" alt="Switzerland" loading="lazy" />
+          <div class="overlay">
+            <strong>Switzerland</strong>
+            <span>2019</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Skyline.jpg" alt="France" loading="lazy" />
+          <div class="overlay">
+            <strong>France</strong>
+            <span>2018</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Madrid%20Skyline.jpg" alt="Spain" loading="lazy" />
+          <div class="overlay">
+            <strong>Spain</strong>
+            <span>2018</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tokyo%20Skyline.jpg" alt="Japan" loading="lazy" />
+          <div class="overlay">
+            <strong>Japan</strong>
+            <span>2014</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2015%20Taipei%20skyline%20viewed%20from%20Taipei%20101.jpg" alt="Taiwan" loading="lazy" />
+          <div class="overlay">
+            <strong>Taiwan</strong>
+            <span>2015</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hong-Kong%20skyline.JPG" alt="Hong Kong" loading="lazy" />
+          <div class="overlay">
+            <strong>Hong Kong</strong>
+            <span>2010</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bangkok%20skyline.jpg" alt="Thailand" loading="lazy" />
+          <div class="overlay">
+            <strong>Thailand</strong>
+            <span>2012</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Singapore%20Skyline.jpg" alt="Singapore" loading="lazy" />
+          <div class="overlay">
+            <strong>Singapore</strong>
+            <span>2013</span>
+          </div>
+        </div>
+        <div class="travel-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jakarta%20Skyline.jpeg" alt="Indonesia" loading="lazy" />
+          <div class="overlay">
+            <strong>Indonesia</strong>
+            <span>2013</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Back to <a href="./index.html">Home</a></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
