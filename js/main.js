@@ -94,6 +94,9 @@ if (mapContainer && window.L) {
       "hong kong sar china",
       "thailand",
       "indonesia",
+      "united states",
+      "united states of america",
+      "usa",
     ]);
 
     points
