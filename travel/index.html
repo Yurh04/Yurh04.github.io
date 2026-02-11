@@ -35,6 +35,13 @@
       <div class="map-wrap">
         <div id="travel-map"></div>
         <div class="map-legend">Beijing → Destinations</div>
+        <div class="map-photo-viewer" id="map-photo-viewer" hidden>
+          <div class="map-photo-viewer-head">
+            <h4 id="map-photo-viewer-title">Trip photos</h4>
+            <button id="map-photo-viewer-close" type="button" aria-label="Close photos">Close</button>
+          </div>
+          <div class="map-photo-viewer-grid" id="map-photo-viewer-grid"></div>
+        </div>
         <div class="map-data" hidden>
           <span data-name="Beijing" data-lat="39.9042" data-lon="116.4074" data-type="origin"></span>
           <span data-name="Seoul" data-lat="37.5665" data-lon="126.9780" data-type="destination"></span>
@@ -58,6 +65,15 @@
           <span data-name="Jakarta" data-lat="-6.2088" data-lon="106.8456" data-type="destination"></span>
           <span data-name="New York" data-lat="40.7128" data-lon="-74.0060" data-type="destination"></span>
         </div>
+      </div>
+
+      <div class="trip-detail" id="trip-detail">
+        <div class="trip-detail-head">
+          <h3 id="trip-detail-title">Select a country card</h3>
+          <span id="trip-detail-year">Route preview</span>
+        </div>
+        <p id="trip-detail-route">Click a travel card to zoom map and show your in-country route.</p>
+        <div class="trip-photo-grid" id="trip-photo-grid"></div>
       </div>
 
       <div class="travel-grid">
@@ -89,42 +105,42 @@
             <span>2024</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Spain" data-year="2024.07-08" data-route="Madrid,40.4168,-3.7038;Toledo,39.8628,-4.0273;Mallorca,39.6953,3.0176" data-route-photos="Madrid,https://source.unsplash.com/900x600/?madrid+spain+city|https://source.unsplash.com/900x600/?madrid+spain+street|https://source.unsplash.com/900x600/?madrid+spain+landmark;Toledo,https://source.unsplash.com/900x600/?toledo+spain+old+town|https://source.unsplash.com/900x600/?toledo+spain+city|https://source.unsplash.com/900x600/?toledo+spain+architecture;Mallorca,https://source.unsplash.com/900x600/?mallorca+spain+coast|https://source.unsplash.com/900x600/?mallorca+spain+beach|https://source.unsplash.com/900x600/?mallorca+spain+island">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Barcelona%20Skyline.jpg" alt="Spain" loading="lazy" />
           <div class="overlay">
             <strong>Spain</strong>
             <span>2024.07–08</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Portugal" data-year="2024.07-08" data-route="Porto,41.1579,-8.6291;Coimbra,40.2033,-8.4103;Lisbon,38.7223,-9.1393" data-route-photos="Porto,https://source.unsplash.com/900x600/?porto+portugal+river|https://source.unsplash.com/900x600/?porto+portugal+city|https://source.unsplash.com/900x600/?porto+portugal+architecture;Coimbra,https://source.unsplash.com/900x600/?coimbra+portugal+city|https://source.unsplash.com/900x600/?coimbra+portugal+university|https://source.unsplash.com/900x600/?coimbra+portugal+street;Lisbon,https://source.unsplash.com/900x600/?lisbon+portugal+city|https://source.unsplash.com/900x600/?lisbon+portugal+tram|https://source.unsplash.com/900x600/?lisbon+portugal+view">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lisbon%20Skyline%20%28217154099%29.jpeg" alt="Portugal" loading="lazy" />
           <div class="overlay">
             <strong>Portugal</strong>
             <span>2024.07–08</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Austria" data-year="2023.07-08" data-route="Vienna,48.2082,16.3738;Salzburg,47.8095,13.0550" data-route-photos="Vienna,https://source.unsplash.com/900x600/?vienna+austria+city|https://source.unsplash.com/900x600/?vienna+austria+palace|https://source.unsplash.com/900x600/?vienna+austria+architecture;Salzburg,https://source.unsplash.com/900x600/?salzburg+austria+city|https://source.unsplash.com/900x600/?salzburg+austria+old+town|https://source.unsplash.com/900x600/?salzburg+austria+mountain">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vienna%20Skyline.jpg" alt="Austria" loading="lazy" />
           <div class="overlay">
             <strong>Austria</strong>
             <span>2023.07–08</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Germany" data-year="2023.07-08" data-route="Berchtesgaden,47.6320,13.0006;Munich,48.1351,11.5820;Heidelberg,49.3988,8.6724;Frankfurt,50.1109,8.6821;Dortmund,51.5136,7.4653;Cologne,50.9375,6.9603;Aachen,50.7753,6.0839" data-route-photos="Berchtesgaden,https://source.unsplash.com/900x600/?berchtesgaden+germany+mountain|https://source.unsplash.com/900x600/?berchtesgaden+germany+lake|https://source.unsplash.com/900x600/?berchtesgaden+germany+alps;Munich,https://source.unsplash.com/900x600/?munich+germany+city|https://source.unsplash.com/900x600/?munich+germany+old+town|https://source.unsplash.com/900x600/?munich+germany+architecture;Heidelberg,https://source.unsplash.com/900x600/?heidelberg+germany+castle|https://source.unsplash.com/900x600/?heidelberg+germany+city|https://source.unsplash.com/900x600/?heidelberg+germany+bridge;Frankfurt,https://source.unsplash.com/900x600/?frankfurt+germany+skyline|https://source.unsplash.com/900x600/?frankfurt+germany+city|https://source.unsplash.com/900x600/?frankfurt+germany+business;Dortmund,https://source.unsplash.com/900x600/?dortmund+germany+city|https://source.unsplash.com/900x600/?dortmund+germany+street|https://source.unsplash.com/900x600/?dortmund+germany+stadium;Cologne,https://source.unsplash.com/900x600/?cologne+germany+cathedral|https://source.unsplash.com/900x600/?cologne+germany+city|https://source.unsplash.com/900x600/?cologne+germany+river;Aachen,https://source.unsplash.com/900x600/?aachen+germany+city|https://source.unsplash.com/900x600/?aachen+germany+cathedral|https://source.unsplash.com/900x600/?aachen+germany+street">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Berlin%20Skyline.jpg" alt="Germany" loading="lazy" />
           <div class="overlay">
             <strong>Germany</strong>
             <span>2023.07–08</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Netherlands" data-year="2023.07-08" data-route="Amsterdam,52.3676,4.9041" data-route-photos="Amsterdam,https://source.unsplash.com/900x600/?amsterdam+netherlands+canal|https://source.unsplash.com/900x600/?amsterdam+netherlands+city|https://source.unsplash.com/900x600/?amsterdam+netherlands+bicycle">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Amsterdam%20skyline.jpg" alt="Netherlands" loading="lazy" />
           <div class="overlay">
             <strong>Netherlands</strong>
             <span>2023.07–08</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Belgium" data-year="2023.07-08" data-route="Brussels,50.8503,4.3517" data-route-photos="Brussels,https://source.unsplash.com/900x600/?brussels+belgium+grand+place|https://source.unsplash.com/900x600/?brussels+belgium+city|https://source.unsplash.com/900x600/?brussels+belgium+architecture">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Brussels%20skyline.jpg" alt="Belgium" loading="lazy" />
           <div class="overlay">
             <strong>Belgium</strong>
@@ -145,14 +161,14 @@
             <span>2016</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Italy" data-year="2019" data-route="Rome,41.9028,12.4964;Florence,43.7696,11.2558;Venice,45.4408,12.3155;Milan,45.4642,9.1900" data-route-photos="Rome,https://source.unsplash.com/900x600/?rome+italy+colosseum|https://source.unsplash.com/900x600/?rome+italy+city|https://source.unsplash.com/900x600/?rome+italy+street;Florence,https://source.unsplash.com/900x600/?florence+italy+city|https://source.unsplash.com/900x600/?florence+italy+cathedral|https://source.unsplash.com/900x600/?florence+italy+bridge;Venice,https://source.unsplash.com/900x600/?venice+italy+canal|https://source.unsplash.com/900x600/?venice+italy+city|https://source.unsplash.com/900x600/?venice+italy+gondola;Milan,https://source.unsplash.com/900x600/?milan+italy+duomo|https://source.unsplash.com/900x600/?milan+italy+city|https://source.unsplash.com/900x600/?milan+italy+street">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rome%20skyline%20panorama.jpg" alt="Italy" loading="lazy" />
           <div class="overlay">
             <strong>Italy</strong>
             <span>2019</span>
           </div>
         </div>
-        <div class="travel-card">
+        <div class="travel-card" data-country="Switzerland" data-year="2019" data-route="Bern,46.9480,7.4474;Lucerne,47.0502,8.3093;Spiez,46.6885,7.6796;Jungfraujoch,46.5474,7.9854;Interlaken,46.6863,7.8632;Geneva,46.2044,6.1432" data-route-photos="Bern,https://source.unsplash.com/900x600/?bern+switzerland+old+town|https://source.unsplash.com/900x600/?bern+switzerland+city|https://source.unsplash.com/900x600/?bern+switzerland+street;Lucerne,https://source.unsplash.com/900x600/?lucerne+switzerland+lake|https://source.unsplash.com/900x600/?lucerne+switzerland+city|https://source.unsplash.com/900x600/?lucerne+switzerland+bridge;Spiez,https://source.unsplash.com/900x600/?spiez+switzerland+lake|https://source.unsplash.com/900x600/?spiez+switzerland+mountain|https://source.unsplash.com/900x600/?spiez+switzerland+village;Jungfraujoch,https://source.unsplash.com/900x600/?jungfraujoch+switzerland+snow|https://source.unsplash.com/900x600/?jungfrau+switzerland+mountain|https://source.unsplash.com/900x600/?jungfraujoch+switzerland+alps;Interlaken,https://source.unsplash.com/900x600/?interlaken+switzerland+lake|https://source.unsplash.com/900x600/?interlaken+switzerland+mountain|https://source.unsplash.com/900x600/?interlaken+switzerland+valley;Geneva,https://source.unsplash.com/900x600/?geneva+switzerland+lake|https://source.unsplash.com/900x600/?geneva+switzerland+city|https://source.unsplash.com/900x600/?geneva+switzerland+landmark">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Z%C3%BCrich%20Skyline.JPG" alt="Switzerland" loading="lazy" />
           <div class="overlay">
             <strong>Switzerland</strong>
@@ -218,7 +234,7 @@
       </div>
     </section>
 
-    <div class="footer">Back to <a href="./index.html">Home</a></div>
+    <div class="footer">Back to <a href="../">Home</a></div>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
