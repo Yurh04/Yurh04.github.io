@@ -144,3 +144,82 @@ if (mapContainer && window.L) {
       .catch(() => {});
   }
 }
+
+const latestMatchCard = document.getElementById("latest-match-card");
+const matchHistoryBody = document.getElementById("match-history-body");
+
+if (latestMatchCard && matchHistoryBody) {
+  const teamId = "133738"; // Real Madrid in TheSportsDB
+  const endpoint = `https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=${teamId}`;
+
+  const renderLatest = (event) => {
+    const home = event.strHomeTeam || "Home";
+    const away = event.strAwayTeam || "Away";
+    const homeScore = event.intHomeScore ?? "-";
+    const awayScore = event.intAwayScore ?? "-";
+    const league = event.strLeague || "Competition";
+    const date = event.dateEvent || event.strTimestamp || "Unknown date";
+    const venue = event.strVenue || "Venue TBD";
+
+    latestMatchCard.innerHTML = `
+      <div class="meta">
+        <span>${date}</span>
+        <span>${league}</span>
+      </div>
+      <div class="teams">${home} vs ${away}</div>
+      <div class="scoreline">${homeScore} : ${awayScore}</div>
+      <div class="venue">${venue}</div>
+    `;
+  };
+
+  const renderHistory = (events) => {
+    const rows = events
+      .map((event) => {
+        const date = event.dateEvent || "-";
+        const league = event.strLeague || "-";
+        const home = event.strHomeTeam || "Home";
+        const away = event.strAwayTeam || "Away";
+        const homeScore = event.intHomeScore ?? "-";
+        const awayScore = event.intAwayScore ?? "-";
+        return `
+          <tr>
+            <td>${date}</td>
+            <td>${league}</td>
+            <td>${home} vs ${away}</td>
+            <td class="score">${homeScore} : ${awayScore}</td>
+          </tr>
+        `;
+      })
+      .join("");
+
+    matchHistoryBody.innerHTML = rows;
+  };
+
+  const renderError = () => {
+    latestMatchCard.innerHTML = `<p class="match-loading">Unable to load latest match now.</p>`;
+    matchHistoryBody.innerHTML = `
+      <tr>
+        <td colspan="4" class="match-loading">Unable to load match history now.</td>
+      </tr>
+    `;
+  };
+
+  fetch(endpoint)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to fetch match data");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      const events = (data && data.results) || [];
+      if (events.length === 0) {
+        throw new Error("No match data");
+      }
+      renderLatest(events[0]);
+      renderHistory(events.slice(0, 8));
+    })
+    .catch(() => {
+      renderError();
+    });
+}

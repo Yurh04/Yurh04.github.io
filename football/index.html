@@ -137,6 +137,50 @@
       </section>
 
       <section class="section glass" data-reveal>
+        <h2 class="section-title"><span></span>Match Center</h2>
+        <p style="color: var(--muted); line-height: 1.7">
+          Live from public football data: latest scoreline and recent Real
+          Madrid results.
+        </p>
+        <div id="match-center" class="match-center">
+          <article class="latest-match-card" id="latest-match-card">
+            <p class="match-loading">Loading latest match...</p>
+          </article>
+          <div class="history-panel">
+            <h3>Recent Results</h3>
+            <div class="history-table-wrap">
+              <table class="history-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Competition</th>
+                    <th>Match</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody id="match-history-body">
+                  <tr>
+                    <td colspan="4" class="match-loading">
+                      Loading match history...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="match-source">
+              Data source:
+              <a
+                href="https://www.thesportsdb.com/"
+                target="_blank"
+                rel="noreferrer"
+                >TheSportsDB</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section glass" data-reveal>
         <h2 class="section-title"><span></span>Matchday Ritual</h2>
         <p style="color: var(--muted); line-height: 1.7">
           Weekend matchdays are for early line-up checks, tactical notes, and a

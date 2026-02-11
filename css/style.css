@@ -710,6 +710,109 @@ main {
   font-weight: 600;
 }
 
+.match-center {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 1.4fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.latest-match-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(8, 15, 32, 0.62));
+  padding: 20px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.latest-match-card .meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.latest-match-card .teams {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  color: #f3f8ff;
+}
+
+.latest-match-card .scoreline {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-family: var(--mono);
+  color: #a6fff1;
+  letter-spacing: 1px;
+}
+
+.latest-match-card .venue {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.history-panel {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  padding: 18px;
+}
+
+.history-panel h3 {
+  font-family: var(--mono);
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.history-table-wrap {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+
+.history-table th,
+.history-table td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 0.9rem;
+}
+
+.history-table th {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.history-table td.score {
+  font-family: var(--mono);
+  color: #e9f7ff;
+}
+
+.match-loading {
+  color: var(--muted);
+}
+
+.match-source {
+  margin-top: 12px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.match-source a {
+  color: #a6fff1;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -752,5 +855,9 @@ main {
 
   .travel-grid {
     grid-auto-columns: minmax(180px, 1fr);
+  }
+
+  .match-center {
+    grid-template-columns: 1fr;
   }
 }
