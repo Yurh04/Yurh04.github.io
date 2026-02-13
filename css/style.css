@@ -263,6 +263,69 @@ main {
   margin-top: 20px;
 }
 
+.about-split {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.2fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.about-football-panel {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(10, 16, 26, 0.7));
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-crest-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  color: #f2f8ff;
+}
+
+.about-crest-line img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.about-pitch-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.about-pitch-photo img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.about-midfield-notes {
+  border-radius: 12px;
+  border: 1px solid rgba(93, 228, 199, 0.28);
+  background: rgba(93, 228, 199, 0.08);
+  padding: 12px;
+}
+
+.about-midfield-notes h3 {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #f0f8ff;
+}
+
+.about-midfield-notes p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
 .chip {
   padding: 10px 16px;
   border-radius: 999px;
@@ -283,6 +346,41 @@ main {
   height: 22px;
   object-fit: contain;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+}
+
+.football-dna-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.football-dna-card {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.football-dna-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.football-dna-card h3 {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  padding: 14px 14px 8px;
+  color: #eef7ff;
+}
+
+.football-dna-card p {
+  padding: 0 14px 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
 .favorites-grid {
@@ -1089,6 +1187,10 @@ main {
   }
 
   .match-center {
+    grid-template-columns: 1fr;
+  }
+
+  .about-split {
     grid-template-columns: 1fr;
   }
 }

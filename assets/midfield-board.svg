@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Midfield Tactical Board</title>
+  <desc id="desc">Stylized football pitch with passing lanes and midfield control markers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b3d2e"/>
+      <stop offset="100%" stop-color="#091b29"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5de4c7"/>
+      <stop offset="100%" stop-color="#3ba1ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <rect x="36" y="36" width="1128" height="628" rx="18" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="4"/>
+  <line x1="600" y1="36" x2="600" y2="664" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
+  <circle cx="600" cy="350" r="86" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
+  <rect x="36" y="220" width="160" height="260" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
+  <rect x="1004" y="220" width="160" height="260" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
+  <circle cx="600" cy="350" r="16" fill="#ffd667"/>
+  <circle cx="760" cy="280" r="14" fill="#5de4c7"/>
+  <circle cx="825" cy="350" r="14" fill="#5de4c7"/>
+  <circle cx="760" cy="420" r="14" fill="#5de4c7"/>
+  <circle cx="470" cy="260" r="14" fill="#3ba1ff"/>
+  <circle cx="430" cy="350" r="14" fill="#3ba1ff"/>
+  <circle cx="470" cy="440" r="14" fill="#3ba1ff"/>
+  <path d="M600 350 C650 330,700 305,760 280" fill="none" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M760 280 C790 300,810 325,825 350" fill="none" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M825 350 C810 375,790 402,760 420" fill="none" stroke="url(#line)" stroke-width="7" stroke-linecap="round"/>
+  <text x="58" y="92" fill="rgba(255,255,255,0.88)" font-size="40" font-family="Chivo Mono, monospace">MIDFIELD CONTROL</text>
+  <text x="58" y="136" fill="rgba(255,255,255,0.65)" font-size="24" font-family="Space Grotesk, sans-serif">scan · pass · progress · press</text>
+</svg>
