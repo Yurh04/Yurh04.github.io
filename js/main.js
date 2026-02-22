@@ -350,6 +350,74 @@ if (mapContainer && window.L) {
 
 const latestMatchCard = document.getElementById("latest-match-card");
 const matchHistoryBody = document.getElementById("match-history-body");
+const standingsPanel = document.getElementById("standings-panel");
+const LA_LIGA_ID = "4335";
+
+if (standingsPanel) {
+  const fetchStandings = async () => {
+    try {
+      const endpoint = `https://www.thesportsdb.com/api/v1/json/3/lookuptable.php?l=${LA_LIGA_ID}&s=2024-2025`;
+      const res = await fetch(endpoint);
+      const data = await res.json();
+
+      if (!data.table || data.table.length === 0) {
+        throw new Error("No standings data");
+      }
+
+      const rows = data.table.slice(0, 10).map((team) => {
+        const isRealMadrid = team.strTeam.toLowerCase().includes("madrid");
+        return `
+          <tr class="${isRealMadrid ? "highlight" : ""}">
+            <td class="rank">${team.intRank}</td>
+            <td class="team">
+              <img src="${team.strTeamBadge || ""}" alt="${team.strTeam}" onerror="this.style.display='none'" />
+              ${team.strTeam}
+            </td>
+            <td>${team.intPlayed}</td>
+            <td>${team.intWin}</td>
+            <td>${team.intDraw}</td>
+            <td>${team.intLoss}</td>
+            <td>${team.intGoalsFor}:${team.intGoalsAgainst}</td>
+            <td class="points">${team.intPoints}</td>
+          </tr>
+        `;
+      });
+
+      standingsPanel.innerHTML = `
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Team</th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>GD</th>
+              <th>Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.join("")}
+          </tbody>
+        </table>
+        <p class="match-source">
+          Data source:
+          <a href="https://www.thesportsdb.com/" target="_blank" rel="noreferrer">TheSportsDB</a>
+        </p>
+      `;
+    } catch {
+      standingsPanel.innerHTML = `
+        <p class="match-loading">
+          Unable to load standings.
+          <a href="https://www.laliga.com/en-GB/laliga-easports/standing" target="_blank" rel="noreferrer" style="color: #a6fff1;">View LaLiga table</a>
+        </p>
+      `;
+    }
+  };
+
+  fetchStandings();
+}
 
 if (latestMatchCard && matchHistoryBody) {
   const teamId = "133738"; // Real Madrid in TheSportsDB
