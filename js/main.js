@@ -421,24 +421,70 @@ if (standingsPanel) {
 
 if (latestMatchCard && matchHistoryBody) {
   const teamId = "133738"; // Real Madrid in TheSportsDB
-  const endpoint = `https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=${teamId}`;
+  const todayISO = new Date().toISOString().slice(0, 10);
 
-  const renderLatest = (event) => {
+  const parseEventDate = (event) => {
+    const raw = event.dateEvent || event.strTimestamp || "";
+    const date = new Date(raw);
+    return Number.isNaN(date.getTime()) ? null : date;
+  };
+
+  const byDateDesc = (a, b) => {
+    const ad = parseEventDate(a);
+    const bd = parseEventDate(b);
+    if (!ad && !bd) {
+      return 0;
+    }
+    if (!ad) {
+      return 1;
+    }
+    if (!bd) {
+      return -1;
+    }
+    return bd - ad;
+  };
+
+  const byDateAsc = (a, b) => {
+    const ad = parseEventDate(a);
+    const bd = parseEventDate(b);
+    if (!ad && !bd) {
+      return 0;
+    }
+    if (!ad) {
+      return 1;
+    }
+    if (!bd) {
+      return -1;
+    }
+    return ad - bd;
+  };
+
+  const isFinished = (event) => event.intHomeScore !== null && event.intHomeScore !== undefined;
+
+  const isRealMadridEvent = (event) => {
+    const home = (event.strHomeTeam || "").toLowerCase();
+    const away = (event.strAwayTeam || "").toLowerCase();
+    return home.includes("real madrid") || away.includes("real madrid");
+  };
+
+  const renderLeadCard = (event, isUpcoming = false) => {
     const home = event.strHomeTeam || "Home";
     const away = event.strAwayTeam || "Away";
-    const homeScore = event.intHomeScore ?? "-";
-    const awayScore = event.intAwayScore ?? "-";
+    const homeScore = event.intHomeScore ?? "";
+    const awayScore = event.intAwayScore ?? "";
     const league = event.strLeague || "Competition";
     const date = event.dateEvent || event.strTimestamp || "Unknown date";
     const venue = event.strVenue || "Venue TBD";
+    const scoreline = isUpcoming ? "vs" : `${homeScore} : ${awayScore}`;
+    const subtitle = isUpcoming ? "Next Match" : "Latest Result";
 
     latestMatchCard.innerHTML = `
       <div class="meta">
         <span>${date}</span>
-        <span>${league}</span>
+        <span>${subtitle} · ${league}</span>
       </div>
       <div class="teams">${home} vs ${away}</div>
-      <div class="scoreline">${homeScore} : ${awayScore}</div>
+      <div class="scoreline">${scoreline}</div>
       <div class="venue">${venue}</div>
     `;
   };
@@ -467,7 +513,7 @@ if (latestMatchCard && matchHistoryBody) {
   };
 
   const renderError = () => {
-    latestMatchCard.innerHTML = `<p class="match-loading">Unable to load latest match now.</p>`;
+    latestMatchCard.innerHTML = `<p class="match-loading">Unable to load match center now.</p>`;
     matchHistoryBody.innerHTML = `
       <tr>
         <td colspan="4" class="match-loading">Unable to load match history now.</td>
@@ -475,22 +521,70 @@ if (latestMatchCard && matchHistoryBody) {
     `;
   };
 
-  fetch(endpoint)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("Failed to fetch match data");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      const events = (data && data.results) || [];
-      if (events.length === 0) {
+  const loadMatchCenter = async () => {
+    try {
+      const lastEndpoint = `https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=${teamId}`;
+      const nextEndpoint = `https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=${teamId}`;
+      const seasonEndpoints = [
+        `https://www.thesportsdb.com/api/v1/json/3/eventsseason.php?id=${teamId}&s=2025-2026`,
+        `https://www.thesportsdb.com/api/v1/json/3/eventsseason.php?id=${teamId}&s=2024-2025`,
+      ];
+
+      const [lastRes, nextRes, ...seasonRes] = await Promise.all([
+        fetch(lastEndpoint),
+        fetch(nextEndpoint),
+        ...seasonEndpoints.map((url) => fetch(url)),
+      ]);
+
+      const [lastData, nextData, ...seasonData] = await Promise.all([
+        lastRes.ok ? lastRes.json() : Promise.resolve({}),
+        nextRes.ok ? nextRes.json() : Promise.resolve({}),
+        ...seasonRes.map((res) => (res.ok ? res.json() : Promise.resolve({}))),
+      ]);
+
+      const seasonEvents = seasonData
+        .flatMap((data) => data.events || [])
+        .filter(isRealMadridEvent);
+      const lastEvents = (lastData && lastData.results) || [];
+      const nextEvents = (nextData && nextData.events) || [];
+
+      const completedEvents = [...seasonEvents, ...lastEvents]
+        .filter(isFinished)
+        .sort(byDateDesc);
+      const upcomingEvents = [...seasonEvents, ...nextEvents]
+        .filter((event) => {
+          if (isFinished(event)) {
+            return false;
+          }
+          const rawDate = event.dateEvent || "";
+          return !rawDate || rawDate >= todayISO;
+        })
+        .sort(byDateAsc);
+
+      const leadUpcoming = upcomingEvents[0];
+      const leadLatest = completedEvents[0];
+
+      if (leadUpcoming) {
+        renderLeadCard(leadUpcoming, true);
+      } else if (leadLatest) {
+        renderLeadCard(leadLatest, false);
+      } else {
         throw new Error("No match data");
       }
-      renderLatest(events[0]);
-      renderHistory(events.slice(0, 8));
-    })
-    .catch(() => {
+
+      if (completedEvents.length > 0) {
+        renderHistory(completedEvents.slice(0, 8));
+      } else {
+        matchHistoryBody.innerHTML = `
+          <tr>
+            <td colspan="4" class="match-loading">No recent finished matches found.</td>
+          </tr>
+        `;
+      }
+    } catch {
       renderError();
-    });
+    }
+  };
+
+  loadMatchCenter();
 }
