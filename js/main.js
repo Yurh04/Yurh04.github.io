@@ -356,7 +356,7 @@ const LA_LIGA_ID = "4335";
 if (standingsPanel) {
   const fetchStandings = async () => {
     try {
-      const endpoint = `https://www.thesportsdb.com/api/v1/json/3/lookuptable.php?l=${LA_LIGA_ID}&s=2024-2025`;
+      const endpoint = `https://www.thesportsdb.com/api/v1/json/3/lookuptable.php?l=${LA_LIGA_ID}&s=2025-2026`;
       const res = await fetch(endpoint);
       const data = await res.json();
 
