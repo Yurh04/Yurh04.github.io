@@ -6,34 +6,37 @@
     <title>Football | Jack Yu</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body>
+  <body data-title-key="title.football">
     <header class="topbar">
       <div class="inner">
-        <div class="logo">Jack Yu / Football</div>
-        <nav class="nav">
-          <a href="../">Home</a>
-          <a href="../about/">About</a>
-          <a href="../favorites/">Favorites</a>
-          <a href="../devlog/">Thoughts</a>
-          <a class="is-active" href="../football/">Football</a>
-          <a href="../travel/">Travel</a>
-        </nav>
+        <div class="logo" data-i18n="football.logo">Jack Yu / Football</div>
+        <div class="topbar-actions">
+          <nav class="nav">
+            <a href="../" data-i18n="common.nav.home">Home</a>
+            <a href="../about/" data-i18n="common.nav.about">About</a>
+            <a href="../favorites/" data-i18n="common.nav.favorites">Favorites</a>
+            <a href="../devlog/" data-i18n="common.nav.thoughts">Thoughts</a>
+            <a class="is-active" href="../football/" data-i18n="common.nav.football">Football</a>
+            <a href="../travel/" data-i18n="common.nav.travel">Travel</a>
+          </nav>
+          <button class="lang-toggle" type="button" aria-label="Switch language">
+            <span class="lang-toggle-text">中文</span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main class="container">
       <section class="glass football-hero" data-reveal>
         <div>
-          <h1>Hala Madrid</h1>
-          <p>
-            I’m a die-hard Madridista. This page collects the latest Real Madrid
-            updates, fixtures, and match headlines, plus a few personal notes.
+          <h1 data-i18n="football.hero.title">Hala Madrid</h1>
+          <p data-i18n="football.hero.body">
+            I’m a die-hard Madridista. This page collects the latest Real Madrid updates, fixtures, and match headlines,
+            plus a few personal notes.
           </p>
-          <div
-            style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap"
-          >
-            <span class="football-badge">Real Madrid · Since 1902</span>
-            <span class="football-badge">Position: CM · Through Balls</span>
+          <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap">
+            <span class="football-badge" data-i18n="football.hero.badge1">Real Madrid · Since 1902</span>
+            <span class="football-badge" data-i18n="football.hero.badge2">Position: CM · Through Balls</span>
           </div>
         </div>
         <div>
@@ -53,11 +56,10 @@
       </section>
 
       <section class="section glass" data-reveal>
-        <h2 class="section-title"><span></span>Latest News</h2>
-        <p style="color: var(--muted); line-height: 1.7">
-          Latest verified updates as of <strong>2026-03-29</strong>. This feed
-          is refreshed from public match and fixture sources for Real Madrid's
-          most recent results plus the next key dates.
+        <h2 class="section-title"><span></span><span data-i18n="football.news.title">Latest News</span></h2>
+        <p style="color: var(--muted); line-height: 1.7" data-i18n="football.news.desc">
+          Latest verified updates as of <strong>2026-03-29</strong>. This feed is refreshed from public match and fixture
+          sources for Real Madrid's most recent results plus the next key dates.
         </p>
         <div class="news-grid">
           <article class="news-card">
@@ -75,12 +77,12 @@
                 href="https://www.espn.com/soccer/match/_/gameId/748433/atletico-madrid-real-madrid"
                 target="_blank"
                 rel="noreferrer"
+                data-i18n="football.news.item1.title"
               >
                 Madrid derby final: Real Madrid 3-2 Atletico (LaLiga)
               </a>
-              <p style="color: var(--muted)">
-                ESPN match center confirms Madrid won 3-2 at the Bernabeu in a
-                key league clash before the April run-in.
+              <p style="color: var(--muted)" data-i18n="football.news.item1.body">
+                ESPN match center confirms Madrid won 3-2 at the Bernabeu in a key league clash before the April run-in.
               </p>
             </div>
           </article>
@@ -100,12 +102,12 @@
                 href="https://www.espn.com/soccer/match/_/gameId/401862647/real-madrid-manchester-city"
                 target="_blank"
                 rel="noreferrer"
+                data-i18n="football.news.item2.title"
               >
                 UEFA UCL result: Man City 1-2 Real Madrid (agg 1-5)
               </a>
-              <p style="color: var(--muted)">
-                ESPN match report lists Madrid's 2-1 away win at the Etihad,
-                sealing qualification with a 5-1 aggregate score.
+              <p style="color: var(--muted)" data-i18n="football.news.item2.body">
+                ESPN match report lists Madrid's 2-1 away win at the Etihad, sealing qualification with a 5-1 aggregate score.
               </p>
             </div>
           </article>
@@ -125,13 +127,12 @@
                 href="https://www.espn.com/soccer/team/fixtures/_/id/86/real-madrid"
                 target="_blank"
                 rel="noreferrer"
+                data-i18n="football.news.item3.title"
               >
-                Upcoming fixtures: Mallorca vs Real Madrid (Apr 4), then Bayern
-                (Apr 7)
+                Upcoming fixtures: Mallorca vs Real Madrid (Apr 4), then Bayern (Apr 7)
               </a>
-              <p style="color: var(--muted)">
-                ESPN fixtures list Mallorca away on April 4, 2026, followed by
-                the UCL quarterfinal first leg vs Bayern on April 7.
+              <p style="color: var(--muted)" data-i18n="football.news.item3.body">
+                ESPN fixtures list Mallorca away on April 4, 2026, followed by the UCL quarterfinal first leg vs Bayern on April 7.
               </p>
             </div>
           </article>
@@ -139,37 +140,36 @@
       </section>
 
       <section class="section glass" data-reveal>
-        <h2 class="section-title"><span></span>La Liga Standings</h2>
+        <h2 class="section-title"><span></span><span data-i18n="football.standings.title">La Liga Standings</span></h2>
         <div class="standings-panel" id="standings-panel">
-          <p class="match-loading">Loading standings...</p>
+          <p class="match-loading" data-i18n="football.loading.standings">Loading standings...</p>
         </div>
       </section>
 
       <section class="section glass" data-reveal>
-        <h2 class="section-title"><span></span>Match Center</h2>
-        <p style="color: var(--muted); line-height: 1.7">
-          Live from public football data: next fixture plus recent Real Madrid
-          results.
+        <h2 class="section-title"><span></span><span data-i18n="football.center.title">Match Center</span></h2>
+        <p style="color: var(--muted); line-height: 1.7" data-i18n="football.center.desc">
+          Live from public football data: next fixture plus recent Real Madrid results.
         </p>
         <div id="match-center" class="match-center">
           <article class="latest-match-card" id="latest-match-card">
-            <p class="match-loading">Loading latest match...</p>
+            <p class="match-loading" data-i18n="football.loading.latest">Loading latest match...</p>
           </article>
           <div class="history-panel">
-            <h3>Recent Results</h3>
+            <h3 data-i18n="football.center.recent">Recent Results</h3>
             <div class="history-table-wrap">
               <table class="history-table">
                 <thead>
                   <tr>
-                    <th>Date</th>
-                    <th>Competition</th>
-                    <th>Match</th>
-                    <th>Score</th>
+                    <th data-i18n="football.table.date">Date</th>
+                    <th data-i18n="football.table.competition">Competition</th>
+                    <th data-i18n="football.table.match">Match</th>
+                    <th data-i18n="football.table.score">Score</th>
                   </tr>
                 </thead>
                 <tbody id="match-history-body">
                   <tr>
-                    <td colspan="4" class="match-loading">
+                    <td colspan="4" class="match-loading" data-i18n="football.loading.history">
                       Loading match history...
                     </td>
                   </tr>
@@ -177,7 +177,7 @@
               </table>
             </div>
             <p class="match-source">
-              Data source:
+              <span data-i18n="football.label.dataSource">Data source:</span>
               <a
                 href="https://www.thesportsdb.com/"
                 target="_blank"
@@ -190,14 +190,14 @@
       </section>
 
       <section class="section glass" data-reveal>
-        <h2 class="section-title"><span></span>Matchday Ritual</h2>
-        <p style="color: var(--muted); line-height: 1.7">
-          Weekend matchdays are for early line-up checks, tactical notes, and a
-          late-night highlight replay. Hala Madrid y nada más.
+        <h2 class="section-title"><span></span><span data-i18n="football.ritual.title">Matchday Ritual</span></h2>
+        <p style="color: var(--muted); line-height: 1.7" data-i18n="football.ritual.body">
+          Weekend matchdays are for early line-up checks, tactical notes, and a late-night highlight replay.
+          Hala Madrid y nada más.
         </p>
       </section>
 
-      <div class="footer">Back to <a href="../">Home</a></div>
+      <div class="footer"><span data-i18n="common.footer.back">Back to</span> <a href="../" data-i18n="common.footer.home">Home</a></div>
     </main>
 
     <script src="../js/main.js"></script>

@@ -12,33 +12,38 @@
     crossorigin=""
   />
 </head>
-<body>
+<body data-title-key="title.travel">
   <header class="topbar">
     <div class="inner">
-      <div class="logo">Jack Yu / Travel</div>
-      <nav class="nav">
-        <a href="../">Home</a>
-        <a href="../about/">About</a>
-        <a href="../favorites/">Favorites</a>
-        <a href="../devlog/">Thoughts</a>
-        <a href="../football/">Football</a>
-        <a class="is-active" href="../travel/">Travel</a>
-      </nav>
+      <div class="logo" data-i18n="travel.logo">Jack Yu / Travel</div>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="../" data-i18n="common.nav.home">Home</a>
+          <a href="../about/" data-i18n="common.nav.about">About</a>
+          <a href="../favorites/" data-i18n="common.nav.favorites">Favorites</a>
+          <a href="../devlog/" data-i18n="common.nav.thoughts">Thoughts</a>
+          <a href="../football/" data-i18n="common.nav.football">Football</a>
+          <a class="is-active" href="../travel/" data-i18n="common.nav.travel">Travel</a>
+        </nav>
+        <button class="lang-toggle" type="button" aria-label="Switch language">
+          <span class="lang-toggle-text">中文</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="glass" data-reveal>
-      <h1 class="hero-title">Travel Gallery</h1>
-      <p class="hero-subtitle">World map · Beijing to every destination.</p>
+      <h1 class="hero-title" data-i18n="travel.hero.title">Travel Gallery</h1>
+      <p class="hero-subtitle" data-i18n="travel.hero.subtitle">World map · Beijing to every destination.</p>
 
       <div class="map-wrap">
         <div id="travel-map"></div>
-        <div class="map-legend">Beijing → Destinations</div>
+        <div class="map-legend" data-i18n="travel.legend">Beijing → Destinations</div>
         <div class="map-photo-viewer" id="map-photo-viewer" hidden>
           <div class="map-photo-viewer-head">
-            <h4 id="map-photo-viewer-title">Trip photos</h4>
-            <button id="map-photo-viewer-close" type="button" aria-label="Close photos">Close</button>
+            <h4 id="map-photo-viewer-title" data-i18n="travel.viewer.title">Trip photos</h4>
+            <button id="map-photo-viewer-close" type="button" aria-label="Close photos" data-i18n="travel.viewer.close">Close</button>
           </div>
           <div class="map-photo-viewer-grid" id="map-photo-viewer-grid"></div>
         </div>
@@ -69,10 +74,10 @@
 
       <div class="trip-detail" id="trip-detail">
         <div class="trip-detail-head">
-          <h3 id="trip-detail-title">Select a country card</h3>
-          <span id="trip-detail-year">Route preview</span>
+          <h3 id="trip-detail-title" data-i18n="travel.detail.placeholderTitle">Select a country card</h3>
+          <span id="trip-detail-year" data-i18n="travel.label.routePreview">Route preview</span>
         </div>
-        <p id="trip-detail-route">Click a travel card to zoom map and show your in-country route.</p>
+        <p id="trip-detail-route" data-i18n="travel.detail.placeholderBody">Click a travel card to zoom map and show your in-country route.</p>
         <div class="trip-photo-grid" id="trip-photo-grid"></div>
       </div>
 
@@ -234,7 +239,7 @@
       </div>
     </section>
 
-    <div class="footer">Back to <a href="../">Home</a></div>
+    <div class="footer"><span data-i18n="common.footer.back">Back to</span> <a href="../" data-i18n="common.footer.home">Home</a></div>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>

@@ -6,18 +6,23 @@
   <title>About | Jack Yu</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body>
+<body data-title-key="title.about">
   <header class="topbar">
     <div class="inner">
-      <div class="logo">Jack Yu / About</div>
-      <nav class="nav">
-        <a href="../">Home</a>
-        <a class="is-active" href="../about/">About</a>
-        <a href="../favorites/">Favorites</a>
-        <a href="../devlog/">Thoughts</a>
-        <a href="../football/">Football</a>
-        <a href="../travel/">Travel</a>
-      </nav>
+      <div class="logo" data-i18n="about.logo">Jack Yu / About</div>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="../" data-i18n="common.nav.home">Home</a>
+          <a class="is-active" href="../about/" data-i18n="common.nav.about">About</a>
+          <a href="../favorites/" data-i18n="common.nav.favorites">Favorites</a>
+          <a href="../devlog/" data-i18n="common.nav.thoughts">Thoughts</a>
+          <a href="../football/" data-i18n="common.nav.football">Football</a>
+          <a href="../travel/" data-i18n="common.nav.travel">Travel</a>
+        </nav>
+        <button class="lang-toggle" type="button" aria-label="Switch language">
+          <span class="lang-toggle-text">中文</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -25,21 +30,20 @@
     <section class="glass" data-reveal>
       <div class="about-split">
         <div>
-          <h1 class="hero-title">About Me</h1>
-          <p class="hero-subtitle">SE Student @ BUAA | Data &amp; Algo Intern</p>
-          <p style="color: var(--muted); line-height: 1.7;">
-            I'm Jack Yu, a Software Engineering student at BUAA and a data &amp;
-            algorithm intern. I build clean, reliable systems and bring the same
-            midfield mindset to engineering: read the game early, move the ball
+          <h1 class="hero-title" data-i18n="about.hero.title">About Me</h1>
+          <p class="hero-subtitle" data-i18n="about.hero.subtitle">SE Student @ BUAA | Data &amp; Algo Intern</p>
+          <p style="color: var(--muted); line-height: 1.7;" data-i18n="about.hero.body">
+            I'm Jack Yu, a Software Engineering student at BUAA and a data &amp; algorithm intern. I build clean,
+            reliable systems and bring the same midfield mindset to engineering: read the game early, move the ball
             fast, and make teammates better.
           </p>
           <div class="about-grid">
-            <div class="chip">Python</div>
-            <div class="chip">C++</div>
-            <div class="chip">AI / ML</div>
-            <div class="chip">CM · Playmaker</div>
-            <div class="chip">Real Madrid</div>
-            <div class="chip">High Press Mindset</div>
+            <div class="chip" data-i18n="about.chip.python">Python</div>
+            <div class="chip" data-i18n="about.chip.cpp">C++</div>
+            <div class="chip" data-i18n="about.chip.ai">AI / ML</div>
+            <div class="chip" data-i18n="about.chip.cm">CM · Playmaker</div>
+            <div class="chip" data-i18n="about.chip.madrid">Real Madrid</div>
+            <div class="chip" data-i18n="about.chip.press">High Press Mindset</div>
           </div>
         </div>
         <div class="about-football-panel">
@@ -49,7 +53,7 @@
               alt="Real Madrid crest"
               loading="lazy"
             />
-            <span>Hala Madrid</span>
+            <span data-i18n="about.panel.hala">Hala Madrid</span>
           </div>
           <div class="about-pitch-photo">
             <img
@@ -59,10 +63,9 @@
             />
           </div>
           <div class="about-midfield-notes">
-            <h3>Midfield Profile</h3>
-            <p>
-              Preferred role: central midfielder. I focus on progressive passing,
-              tempo control, and covering transition lanes.
+            <h3 data-i18n="about.panel.title">Midfield Profile</h3>
+            <p data-i18n="about.panel.body">
+              Preferred role: central midfielder. I focus on progressive passing, tempo control, and covering transition lanes.
             </p>
           </div>
         </div>
@@ -70,15 +73,15 @@
     </section>
 
     <section class="section glass" data-reveal>
-      <h2 class="section-title"><span></span>Focus Areas</h2>
-      <p style="color: var(--muted); line-height: 1.7;">
-        Working on perception pipelines, high-quality datasets, and efficient model training. I'm especially
-        interested in bridging research ideas into production-grade autonomy systems.
+      <h2 class="section-title"><span></span><span data-i18n="about.focus.title">Focus Areas</span></h2>
+      <p style="color: var(--muted); line-height: 1.7;" data-i18n="about.focus.body">
+        Working on perception pipelines, high-quality datasets, and efficient model training. I'm especially interested
+        in bridging research ideas into production-grade autonomy systems.
       </p>
     </section>
 
     <section class="section glass" data-reveal>
-      <h2 class="section-title"><span></span>Football DNA</h2>
+      <h2 class="section-title"><span></span><span data-i18n="about.dna.title">Football DNA</span></h2>
       <div class="football-dna-grid">
         <article class="football-dna-card">
           <img
@@ -86,8 +89,8 @@
             alt="Champions League logo"
             loading="lazy"
           />
-          <h3>Club Identity</h3>
-          <p>Real Madrid supporter, inspired by elite standards and composure under pressure.</p>
+          <h3 data-i18n="about.dna.club.title">Club Identity</h3>
+          <p data-i18n="about.dna.club.body">Real Madrid supporter, inspired by elite standards and composure under pressure.</p>
         </article>
         <article class="football-dna-card">
           <img
@@ -95,8 +98,8 @@
             alt="Football"
             loading="lazy"
           />
-          <h3>On-Pitch Style</h3>
-          <p>Central midfield role with quick scanning, line-breaking passes, and compact positioning.</p>
+          <h3 data-i18n="about.dna.pitch.title">On-Pitch Style</h3>
+          <p data-i18n="about.dna.pitch.body">Central midfield role with quick scanning, line-breaking passes, and compact positioning.</p>
         </article>
         <article class="football-dna-card">
           <img
@@ -104,13 +107,13 @@
             alt="Bernabeu night"
             loading="lazy"
           />
-          <h3>Engineering Parallel</h3>
-          <p>Build systems like match control: clear structure, fast transitions, and resilient execution.</p>
+          <h3 data-i18n="about.dna.engineering.title">Engineering Parallel</h3>
+          <p data-i18n="about.dna.engineering.body">Build systems like match control: clear structure, fast transitions, and resilient execution.</p>
         </article>
       </div>
     </section>
 
-    <div class="footer">Back to <a href="../">Home</a></div>
+    <div class="footer"><span data-i18n="common.footer.back">Back to</span> <a href="../" data-i18n="common.footer.home">Home</a></div>
   </main>
 
   <script src="../js/main.js"></script>

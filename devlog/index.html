@@ -6,42 +6,47 @@
   <title>Thoughts | Jack Yu</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body>
+<body data-title-key="title.thoughts">
   <header class="topbar">
     <div class="inner">
-      <div class="logo">Jack Yu / Thoughts</div>
-      <nav class="nav">
-        <a href="../">Home</a>
-        <a href="../about/">About</a>
-        <a href="../favorites/">Favorites</a>
-        <a class="is-active" href="../devlog/">Thoughts</a>
-        <a href="../football/">Football</a>
-        <a href="../travel/">Travel</a>
-      </nav>
+      <div class="logo" data-i18n="thoughts.logo">Jack Yu / Thoughts</div>
+      <div class="topbar-actions">
+        <nav class="nav">
+          <a href="../" data-i18n="common.nav.home">Home</a>
+          <a href="../about/" data-i18n="common.nav.about">About</a>
+          <a href="../favorites/" data-i18n="common.nav.favorites">Favorites</a>
+          <a class="is-active" href="../devlog/" data-i18n="common.nav.thoughts">Thoughts</a>
+          <a href="../football/" data-i18n="common.nav.football">Football</a>
+          <a href="../travel/" data-i18n="common.nav.travel">Travel</a>
+        </nav>
+        <button class="lang-toggle" type="button" aria-label="Switch language">
+          <span class="lang-toggle-text">中文</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="glass" data-reveal>
-      <h1 class="hero-title">Thoughts</h1>
-      <p class="hero-subtitle">Short notes on ML, autonomy, and systems.</p>
+      <h1 class="hero-title" data-i18n="thoughts.hero.title">Thoughts</h1>
+      <p class="hero-subtitle" data-i18n="thoughts.hero.subtitle">Short notes on ML, autonomy, and systems.</p>
       <div class="timeline">
         <div class="timeline-item">
-          <h4><span class="timeline-date">2026.02</span>Data-centric autonomy</h4>
-          <p>Exploring how clean labeling and curriculum design can accelerate perception performance.</p>
+          <h4><span class="timeline-date">2026.02</span><span data-i18n="thoughts.item1.title">Data-centric autonomy</span></h4>
+          <p data-i18n="thoughts.item1.body">Exploring how clean labeling and curriculum design can accelerate perception performance.</p>
         </div>
         <div class="timeline-item">
-          <h4><span class="timeline-date">2026.01</span>Efficiency first</h4>
-          <p>Reducing training cost with mixed-precision pipelines and smarter data sampling.</p>
+          <h4><span class="timeline-date">2026.01</span><span data-i18n="thoughts.item2.title">Efficiency first</span></h4>
+          <p data-i18n="thoughts.item2.body">Reducing training cost with mixed-precision pipelines and smarter data sampling.</p>
         </div>
         <div class="timeline-item">
-          <h4><span class="timeline-date">2025.12</span>Product-minded ML</h4>
-          <p>Aligning model metrics with real-world driving KPIs for measurable impact.</p>
+          <h4><span class="timeline-date">2025.12</span><span data-i18n="thoughts.item3.title">Product-minded ML</span></h4>
+          <p data-i18n="thoughts.item3.body">Aligning model metrics with real-world driving KPIs for measurable impact.</p>
         </div>
       </div>
     </section>
 
-    <div class="footer">Back to <a href="../">Home</a></div>
+    <div class="footer"><span data-i18n="common.footer.back">Back to</span> <a href="../" data-i18n="common.footer.home">Home</a></div>
   </main>
 
   <script src="../js/main.js"></script>
