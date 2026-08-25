@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jack Yu's personal portfolio: software engineering, data and algorithms, football, travel, and notes."
+    />
     <title>Jack Yu | Portfolio</title>
+    <script src="./js/theme-init.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body data-title-key="title.home">
@@ -19,6 +24,16 @@
             <a href="./football/" data-i18n="common.nav.football">Football</a>
             <a href="./travel/" data-i18n="common.nav.travel">Travel</a>
           </nav>
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.4" fill="currentColor" />
+              <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.2 14.2A8 8 0 0 1 9.8 3.8 8.7 8.7 0 1 0 20.2 14.2Z" fill="currentColor" />
+            </svg>
+            <span class="theme-toggle-text">Dark</span>
+          </button>
           <button class="lang-toggle" type="button" aria-label="Switch language">
             <span class="lang-toggle-text">中文</span>
           </button>
@@ -27,13 +42,20 @@
     </header>
 
     <main class="container">
-      <section class="glass hero" data-reveal>
-        <div>
+      <section class="hero" data-reveal>
+        <div class="hero-content">
           <h1 class="hero-title">Jack Yu</h1>
           <p class="hero-subtitle" data-i18n="index.hero.subtitle">SE Student @ BUAA | Data &amp; Algo Intern</p>
-          <a class="hero-cta" href="./favorites/" data-i18n="index.hero.cta">View My Work →</a>
+          <p class="hero-intro" data-i18n="index.hero.intro">
+            I care about the craft behind reliable systems, the intelligence inside useful products, and the stories
+            we collect beyond the screen.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-cta" href="./about/" data-i18n="index.hero.cta">Meet Jack</a>
+            <a class="hero-link" href="#explore" data-i18n="index.hero.secondary">Explore the portfolio</a>
+          </div>
           <div class="socials">
-            <a href="https://github.com/Yurh04" aria-label="GitHub">
+            <a href="https://github.com/Yurh04" target="_blank" rel="noreferrer" aria-label="GitHub">
               <svg
                 width="22"
                 height="22"
@@ -67,30 +89,17 @@
                 />
               </svg>
             </a>
-            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.94 8.5V20H3.2V8.5h3.74ZM5.07 4.8a2.17 2.17 0 1 1 0 4.34 2.17 2.17 0 0 1 0-4.34ZM20.8 13.2V20h-3.72v-6.12c0-1.54-.55-2.6-1.94-2.6-1.06 0-1.7.74-1.98 1.45-.1.26-.12.62-.12.99V20H9.3s.05-9.6 0-10.6h3.72v1.5c.49-.78 1.36-1.9 3.32-1.9 2.42 0 4.23 1.63 4.23 5.12Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
           </div>
         </div>
-        <div>
-          <div class="glass" style="padding: 26px">
-            <h2 class="section-title"><span></span><span data-i18n="index.quick.title">Quick Intro</span></h2>
-            <p style="color: var(--muted); line-height: 1.6" data-i18n="index.quick.body">
-              I love <span class="emph">Artificial Intelligence</span>, live for <span class="emph">Real Madrid</span>,
-              and keep a <span class="emph">travel</span> mindset—curious, open, and always exploring new ideas.
+        <div class="hero-interests" aria-label="Interests">
+          <div class="interest-copy">
+            <span class="interest-label" data-i18n="index.quick.title">Current coordinates</span>
+            <p data-i18n="index.quick.body">
+              Building with <span class="emph">AI</span>, supporting <span class="emph">Real Madrid</span>, and staying
+              curious through <span class="emph">travel</span>.
             </p>
-            <div class="about-grid">
+          </div>
+          <div class="interest-list">
               <div class="chip chip-media">
                 <img
                   src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><rect x='6' y='10' width='52' height='34' rx='6' stroke='%23a6fff1' stroke-width='3'/><rect x='14' y='18' width='36' height='18' rx='2' fill='%23a6fff1' fill-opacity='0.2'/><rect x='24' y='46' width='16' height='4' rx='2' fill='%23a6fff1'/></svg>"
@@ -113,46 +122,42 @@
                 />
                 <span data-i18n="index.quick.travel">Travel</span>
               </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section class="section glass" data-reveal>
-        <h2 class="section-title"><span></span><span data-i18n="index.explore.title">Explore The Pages</span></h2>
-        <p style="color: var(--muted); line-height: 1.7" data-i18n="index.explore.body">
-          This homepage is a quick overview. Jump into each page for the full story, galleries, and notes.
-        </p>
+      <section class="section explore-section" id="explore" data-reveal>
+        <div class="section-heading">
+          <h2 class="section-title"><span aria-hidden="true"></span><span data-i18n="index.explore.title">A portfolio in five directions</span></h2>
+          <p data-i18n="index.explore.body">
+            Work, interests, and places each reveal a different part of how I think and what keeps me moving.
+          </p>
+        </div>
         <div class="page-grid">
           <a class="page-card" href="./about/">
+            <span class="page-index">01</span>
             <h3 data-i18n="index.card.about.title">About Me</h3>
-            <p style="color: var(--muted)" data-i18n="index.card.about.body">
-              Background, skills, and what I focus on in software engineering.
-            </p>
+            <p data-i18n="index.card.about.body">The engineering mindset, skills, and interests behind the work.</p>
           </a>
           <a class="page-card" href="./favorites/">
+            <span class="page-index">02</span>
             <h3 data-i18n="index.card.favorites.title">My Favorites</h3>
-            <p style="color: var(--muted)" data-i18n="index.card.favorites.body">
-              Football, favorite clubs, and the games I play.
-            </p>
+            <p data-i18n="index.card.favorites.body">Skiing, football culture, Ronaldo, and competitive gaming.</p>
           </a>
           <a class="page-card" href="./devlog/">
+            <span class="page-index">03</span>
             <h3 data-i18n="index.card.thoughts.title">Thoughts</h3>
-            <p style="color: var(--muted)" data-i18n="index.card.thoughts.body">
-              Recent ideas and short notes on ML and autonomy.
-            </p>
+            <p data-i18n="index.card.thoughts.body">Short notes on machine learning, autonomy, and building useful systems.</p>
           </a>
           <a class="page-card" href="./football/">
+            <span class="page-index">04</span>
             <h3 data-i18n="index.card.football.title">Football (Hala Madrid)</h3>
-            <p style="color: var(--muted)" data-i18n="index.card.football.body">
-              Real Madrid news, fixtures, and fandom highlights.
-            </p>
+            <p data-i18n="index.card.football.body">Real Madrid results, fixtures, and the rituals of being a Madridista.</p>
           </a>
           <a class="page-card" href="./travel/">
+            <span class="page-index">05</span>
             <h3 data-i18n="index.card.travel.title">Travel Gallery</h3>
-            <p style="color: var(--muted)" data-i18n="index.card.travel.body">
-              Horizontal gallery with notes from recent trips.
-            </p>
+            <p data-i18n="index.card.travel.body">A map-led collection of routes, photographs, and moments on the road.</p>
           </a>
         </div>
       </section>

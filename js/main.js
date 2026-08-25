@@ -1,6 +1,10 @@
 const TRANSLATIONS = {
   en: {
     "common.lang.aria": "Switch language",
+    "common.theme.light": "Switch to light mode",
+    "common.theme.dark": "Switch to dark mode",
+    "common.theme.lightLabel": "Light",
+    "common.theme.darkLabel": "Dark",
     "common.nav.home": "Home",
     "common.nav.about": "About",
     "common.nav.favorites": "Favorites",
@@ -9,7 +13,7 @@ const TRANSLATIONS = {
     "common.nav.travel": "Travel",
     "common.footer.back": "Back to",
     "common.footer.home": "Home",
-    "common.footer.tech": "Built with HTML + CSS + Vanilla JS · Glassmorphism UI",
+    "common.footer.tech": "Designed and built by Jack Yu · HTML, CSS & Vanilla JS",
     "title.home": "Jack Yu | Portfolio",
     "title.about": "About | Jack Yu",
     "title.favorites": "Favorites | Jack Yu",
@@ -46,26 +50,29 @@ const TRANSLATIONS = {
     "football.standings.goalDiff": "GD",
     "football.standings.points": "Pts",
     "index.logo": "Jack Yu / Portfolio",
-    "index.hero.subtitle": "SE Student @ BUAA | Data & Algo Intern",
-    "index.hero.cta": "View My Work →",
-    "index.quick.title": "Quick Intro",
+    "index.hero.subtitle": "Software Engineering @ BUAA · Data & Algorithm Intern",
+    "index.hero.intro":
+      "I care about the craft behind reliable systems, the intelligence inside useful products, and the stories we collect beyond the screen.",
+    "index.hero.cta": "Meet Jack",
+    "index.hero.secondary": "Explore the portfolio",
+    "index.quick.title": "Current coordinates",
     "index.quick.body":
-      "I love <span class=\"emph\">Artificial Intelligence</span>, live for <span class=\"emph\">Real Madrid</span>, and keep a <span class=\"emph\">travel</span> mindset, curious, open, and always exploring new ideas.",
+      "Building with <span class=\"emph\">AI</span>, supporting <span class=\"emph\">Real Madrid</span>, and staying curious through <span class=\"emph\">travel</span>.",
     "index.quick.ai": "AI",
     "index.quick.madrid": "Real Madrid",
     "index.quick.travel": "Travel",
-    "index.explore.title": "Explore The Pages",
-    "index.explore.body": "This homepage is a quick overview. Jump into each page for the full story, galleries, and notes.",
+    "index.explore.title": "A portfolio in five directions",
+    "index.explore.body": "Work, interests, and places each reveal a different part of how I think and what keeps me moving.",
     "index.card.about.title": "About Me",
-    "index.card.about.body": "Background, skills, and what I focus on in software engineering.",
+    "index.card.about.body": "The engineering mindset, skills, and interests behind the work.",
     "index.card.favorites.title": "My Favorites",
-    "index.card.favorites.body": "Football, favorite clubs, and the games I play.",
+    "index.card.favorites.body": "Skiing, football culture, Ronaldo, and competitive gaming.",
     "index.card.thoughts.title": "Thoughts",
-    "index.card.thoughts.body": "Recent ideas and short notes on ML and autonomy.",
+    "index.card.thoughts.body": "Short notes on machine learning, autonomy, and building useful systems.",
     "index.card.football.title": "Football (Hala Madrid)",
-    "index.card.football.body": "Real Madrid news, fixtures, and fandom highlights.",
+    "index.card.football.body": "Real Madrid results, fixtures, and the rituals of being a Madridista.",
     "index.card.travel.title": "Travel Gallery",
-    "index.card.travel.body": "Horizontal gallery with notes from recent trips.",
+    "index.card.travel.body": "A map-led collection of routes, photographs, and moments on the road.",
     "about.logo": "Jack Yu / About",
     "about.hero.title": "About Me",
     "about.hero.subtitle": "SE Student @ BUAA | Data & Algo Intern",
@@ -182,6 +189,10 @@ const TRANSLATIONS = {
   },
   zh: {
     "common.lang.aria": "切换语言",
+    "common.theme.light": "切换到浅色模式",
+    "common.theme.dark": "切换到深色模式",
+    "common.theme.lightLabel": "浅色",
+    "common.theme.darkLabel": "深色",
     "common.nav.home": "首页",
     "common.nav.about": "关于我",
     "common.nav.favorites": "我的热爱",
@@ -190,7 +201,7 @@ const TRANSLATIONS = {
     "common.nav.travel": "旅行",
     "common.footer.back": "返回",
     "common.footer.home": "首页",
-    "common.footer.tech": "基于 HTML + CSS + Vanilla JS 构建 · 玻璃拟态界面",
+    "common.footer.tech": "由 Jack Yu 设计与构建 · HTML、CSS 与 Vanilla JS",
     "title.home": "Jack Yu | 个人主页",
     "title.about": "关于我 | Jack Yu",
     "title.favorites": "我的热爱 | Jack Yu",
@@ -227,26 +238,28 @@ const TRANSLATIONS = {
     "football.standings.goalDiff": "净胜球",
     "football.standings.points": "积分",
     "index.logo": "Jack Yu / 个人主页",
-    "index.hero.subtitle": "北航软件工程学生 ｜ 数据与算法实习生",
-    "index.hero.cta": "查看我的世界 →",
-    "index.quick.title": "快速介绍",
+    "index.hero.subtitle": "北航软件工程 · 数据与算法实习生",
+    "index.hero.intro": "我关注可靠系统背后的工程细节、真正有用的智能产品，也珍惜屏幕之外一路收集的故事。",
+    "index.hero.cta": "认识 Jack",
+    "index.hero.secondary": "浏览个人主页",
+    "index.quick.title": "此刻坐标",
     "index.quick.body":
-      "我热爱 <span class=\"emph\">人工智能</span>，为 <span class=\"emph\">皇家马德里</span> 着迷，也一直保持 <span class=\"emph\">旅行者</span> 的心态，保持好奇、开放，持续探索新想法。",
+      "用 <span class=\"emph\">AI</span> 构建，支持 <span class=\"emph\">皇家马德里</span>，也在 <span class=\"emph\">旅行</span> 中保持好奇。",
     "index.quick.ai": "人工智能",
     "index.quick.madrid": "皇家马德里",
     "index.quick.travel": "旅行",
-    "index.explore.title": "浏览页面",
-    "index.explore.body": "这里是我的简要总览。点进每个页面，可以看到更完整的故事、图片和记录。",
+    "index.explore.title": "五个方向，拼出完整的我",
+    "index.explore.body": "工作、热爱与远方，从不同角度记录我的思考方式，也记录那些让我持续向前的事。",
     "index.card.about.title": "关于我",
-    "index.card.about.body": "我的背景、技能，以及我在软件工程中关注的方向。",
+    "index.card.about.body": "了解作品背后的工程思维、技能与兴趣。",
     "index.card.favorites.title": "我的热爱",
-    "index.card.favorites.body": "足球、喜欢的俱乐部，还有我常玩的游戏。",
+    "index.card.favorites.body": "滑雪、足球文化、C 罗，以及竞技游戏。",
     "index.card.thoughts.title": "想法",
-    "index.card.thoughts.body": "一些关于机器学习和自动驾驶的短笔记。",
+    "index.card.thoughts.body": "关于机器学习、自动驾驶与产品化系统的短笔记。",
     "index.card.football.title": "足球（Hala Madrid）",
-    "index.card.football.body": "皇马资讯、赛程，以及我作为球迷的记录。",
+    "index.card.football.body": "皇马赛果、赛程，以及一名 Madridista 的比赛日仪式。",
     "index.card.travel.title": "旅行相册",
-    "index.card.travel.body": "最近旅行的横向画廊和一些沿途笔记。",
+    "index.card.travel.body": "用地图串起路线、照片与沿途的瞬间。",
     "about.logo": "Jack Yu / 关于我",
     "about.hero.title": "关于我",
     "about.hero.subtitle": "北航软件工程学生 ｜ 数据与算法实习生",
@@ -357,10 +370,13 @@ const TRANSLATIONS = {
 };
 
 const LANGUAGE_KEY = "site-language";
+const THEME_KEY = "site-theme";
 const defaultLanguage =
   localStorage.getItem(LANGUAGE_KEY) ||
   (navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
 let currentLanguage = defaultLanguage in TRANSLATIONS ? defaultLanguage : "en";
+const storedTheme = localStorage.getItem(THEME_KEY);
+let currentTheme = storedTheme === "dark" || storedTheme === "light" ? storedTheme : "light";
 
 const t = (key, vars = {}) => {
   const template =
@@ -383,6 +399,24 @@ const updateLanguageToggle = () => {
   });
 };
 
+const updateThemeToggle = () => {
+  document.querySelectorAll(".theme-toggle").forEach((button) => {
+    const isDark = currentTheme === "dark";
+    button.setAttribute("aria-label", t(isDark ? "common.theme.light" : "common.theme.dark"));
+    button.setAttribute("aria-pressed", String(isDark));
+    const textNode = button.querySelector(".theme-toggle-text");
+    if (textNode) {
+      textNode.textContent = t(isDark ? "common.theme.lightLabel" : "common.theme.darkLabel");
+    }
+  });
+};
+
+const applyTheme = () => {
+  document.documentElement.dataset.theme = currentTheme;
+  document.documentElement.style.colorScheme = currentTheme;
+  updateThemeToggle();
+};
+
 const applyTranslations = () => {
   document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
 
@@ -403,6 +437,7 @@ const applyTranslations = () => {
   }
 
   updateLanguageToggle();
+  updateThemeToggle();
   window.dispatchEvent(new CustomEvent("languagechange", { detail: { language: currentLanguage } }));
 };
 
@@ -414,6 +449,15 @@ document.querySelectorAll(".lang-toggle").forEach((button) => {
   });
 });
 
+document.querySelectorAll(".theme-toggle").forEach((button) => {
+  button.addEventListener("click", () => {
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
+    localStorage.setItem(THEME_KEY, currentTheme);
+    applyTheme();
+  });
+});
+
+applyTheme();
 applyTranslations();
 
 const glow = document.body;
