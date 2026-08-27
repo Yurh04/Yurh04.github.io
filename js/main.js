@@ -469,6 +469,58 @@ const updateGlow = (event) => {
 };
 window.addEventListener("mousemove", updateGlow);
 
+// Give each optical surface its own restrained highlight and pointer refraction.
+const glassSurfaceSelector = [
+  ".topbar .inner",
+  ".hero",
+  ".glass",
+  ".card",
+  ".page-card",
+  ".news-card",
+  ".latest-match-card",
+  ".history-panel",
+  ".standings-panel",
+  ".travel-card",
+  ".trip-detail",
+  ".about-football-panel",
+  ".football-dna-card",
+  ".favorite-panel",
+  ".stage-intro",
+].join(",");
+
+const glassSurfaces = Array.from(document.querySelectorAll(glassSurfaceSelector));
+glassSurfaces.forEach((surface, index) => {
+  const sheen = document.createElement("span");
+  sheen.className = "glass-sheen";
+  sheen.setAttribute("aria-hidden", "true");
+  sheen.style.setProperty("--sheen-delay", `${Math.min(index * 85, 680)}ms`);
+
+  const refraction = document.createElement("span");
+  refraction.className = "glass-refraction";
+  refraction.setAttribute("aria-hidden", "true");
+  surface.append(sheen, refraction);
+
+  surface.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch") {
+      return;
+    }
+    const rect = surface.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    refraction.style.setProperty("--refraction-x", `${Math.max(0, Math.min(100, x))}%`);
+    refraction.style.setProperty("--refraction-y", `${Math.max(0, Math.min(100, y))}%`);
+    refraction.classList.add("is-active");
+  });
+
+  surface.addEventListener("pointerleave", () => {
+    refraction.classList.remove("is-active");
+  });
+});
+
+requestAnimationFrame(() => {
+  document.documentElement.classList.add("is-glass-ready");
+});
+
 const reveals = document.querySelectorAll("[data-reveal]");
 if (reveals.length > 0) {
   const observer = new IntersectionObserver(
@@ -483,8 +535,9 @@ if (reveals.length > 0) {
     { threshold: 0.2 }
   );
 
-  reveals.forEach((el) => {
+  reveals.forEach((el, index) => {
     el.classList.add("reveal");
+    el.style.setProperty("--reveal-delay", `${Math.min(index * 90, 540)}ms`);
     observer.observe(el);
   });
 }

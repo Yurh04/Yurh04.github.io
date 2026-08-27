@@ -1,5 +1,5 @@
 /*
- * Liquid Glass v3 — clear spatial glass
+ * Liquid Glass v4 — clearer spatial glass and restrained optical motion
  * Inspired by optical glass principles: neutral material, visible background,
  * bright curved rims, restrained shadows, and floating depth.
  */
@@ -10,10 +10,10 @@
   --lg-accent: 71 201 174;
   --lg-accent-2: 73 121 229;
   --lg-signal: 187 255 54;
-  --lg-panel: rgb(255 255 255 / 0.085);
-  --lg-panel-hover: rgb(255 255 255 / 0.14);
-  --lg-inset: rgb(255 255 255 / 0.12);
-  --lg-inset-hover: rgb(255 255 255 / 0.2);
+  --lg-panel: rgb(255 255 255 / 0.045);
+  --lg-panel-hover: rgb(255 255 255 / 0.095);
+  --lg-inset: rgb(255 255 255 / 0.075);
+  --lg-inset-hover: rgb(255 255 255 / 0.14);
   --lg-border: rgb(255 255 255 / 0.78);
   --lg-border-soft: rgb(255 255 255 / 0.48);
   --lg-rim: rgb(255 255 255 / 0.96);
@@ -126,8 +126,8 @@ main,
     inset -1px 0 0 rgb(255 255 255 / 0.16),
     0 1px 0 rgb(41 48 55 / 0.06),
     var(--lg-shadow);
-  -webkit-backdrop-filter: blur(26px) saturate(155%) contrast(104%);
-  backdrop-filter: blur(26px) saturate(155%) contrast(104%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%) contrast(103%);
+  backdrop-filter: blur(16px) saturate(170%) contrast(103%);
 }
 
 /* No nested backdrop-filter: the outer glass already refracts the scene. */
@@ -168,14 +168,14 @@ main,
   padding: 10px 12px 10px 22px;
   border-radius: 28px;
   background:
-    linear-gradient(142deg, rgb(255 255 255 / 0.18), transparent 45%, rgb(255 255 255 / 0.055)),
-    rgb(255 255 255 / 0.075);
+    linear-gradient(142deg, rgb(255 255 255 / 0.12), transparent 45%, rgb(255 255 255 / 0.035)),
+    var(--lg-panel);
   box-shadow:
     inset 0 1px 0 #fff,
     inset 0 0 0 1px rgb(255 255 255 / 0.16),
     0 18px 60px rgb(40 47 53 / 0.08);
-  -webkit-backdrop-filter: blur(28px) saturate(165%) contrast(105%);
-  backdrop-filter: blur(28px) saturate(165%) contrast(105%);
+  -webkit-backdrop-filter: blur(18px) saturate(175%) contrast(103%);
+  backdrop-filter: blur(18px) saturate(175%) contrast(103%);
 }
 
 .logo {
@@ -250,16 +250,16 @@ main,
   border: 1px solid rgb(255 255 255 / 0.8);
   border-radius: var(--lg-radius-lg);
   background:
-    linear-gradient(132deg, rgb(255 255 255 / 0.11), transparent 34%, rgb(255 255 255 / 0.025) 76%),
-    rgb(255 255 255 / 0.055);
+    linear-gradient(132deg, rgb(255 255 255 / 0.075), transparent 34%, rgb(255 255 255 / 0.015) 76%),
+    rgb(255 255 255 / 0.028);
   box-shadow:
     inset 0 1px 0 #fff,
     inset 1px 0 0 rgb(255 255 255 / 0.48),
     inset 0 -1px 0 rgb(255 255 255 / 0.3),
     0 1px 0 rgb(37 44 50 / 0.06),
     0 30px 100px rgb(37 44 50 / 0.08);
-  -webkit-backdrop-filter: blur(22px) saturate(145%) contrast(103%);
-  backdrop-filter: blur(22px) saturate(145%) contrast(103%);
+  -webkit-backdrop-filter: blur(15px) saturate(175%) contrast(103%);
+  backdrop-filter: blur(15px) saturate(175%) contrast(103%);
 }
 
 .container > section.glass > * {
@@ -446,16 +446,16 @@ main,
   border: 1px solid rgb(255 255 255 / 0.82);
   border-radius: 40px;
   background:
-    linear-gradient(132deg, rgb(255 255 255 / 0.1), transparent 38%, rgb(255 255 255 / 0.025)),
-    rgb(255 255 255 / 0.045);
+    linear-gradient(132deg, rgb(255 255 255 / 0.075), transparent 38%, rgb(255 255 255 / 0.015)),
+    rgb(255 255 255 / 0.028);
   color: var(--lg-ink);
   box-shadow:
     inset 0 1px 0 #fff,
     inset 1px 0 0 rgb(255 255 255 / 0.45),
     inset 0 -1px 0 rgb(255 255 255 / 0.28),
     0 34px 110px rgb(36 43 49 / 0.09);
-  -webkit-backdrop-filter: blur(18px) saturate(140%) contrast(104%);
-  backdrop-filter: blur(18px) saturate(140%) contrast(104%);
+  -webkit-backdrop-filter: blur(15px) saturate(175%) contrast(103%);
+  backdrop-filter: blur(15px) saturate(175%) contrast(103%);
 }
 
 .hero::before {
@@ -716,10 +716,10 @@ main,
 :root[data-theme="dark"] {
   --lg-ink: #f4f7f8;
   --lg-ink-soft: #bdc5ca;
-  --lg-panel: rgb(4 8 11 / 0.12);
-  --lg-panel-hover: rgb(255 255 255 / 0.065);
-  --lg-inset: rgb(255 255 255 / 0.04);
-  --lg-inset-hover: rgb(255 255 255 / 0.075);
+  --lg-panel: rgb(3 7 10 / 0.075);
+  --lg-panel-hover: rgb(255 255 255 / 0.045);
+  --lg-inset: rgb(255 255 255 / 0.026);
+  --lg-inset-hover: rgb(255 255 255 / 0.055);
   --lg-border: rgb(255 255 255 / 0.2);
   --lg-border-soft: rgb(255 255 255 / 0.13);
   --lg-rim: rgb(255 255 255 / 0.3);
@@ -771,7 +771,7 @@ main,
 :root[data-theme="dark"] .container > section.glass {
   border-color: var(--lg-border);
   background:
-    linear-gradient(138deg, rgb(255 255 255 / 0.065), transparent 38%, rgb(255 255 255 / 0.015)),
+    linear-gradient(138deg, rgb(255 255 255 / 0.042), transparent 38%, rgb(255 255 255 / 0.01)),
     var(--lg-panel);
   color: var(--lg-ink);
   box-shadow:
@@ -779,8 +779,8 @@ main,
     inset 1px 0 0 rgb(255 255 255 / 0.08),
     inset 0 -1px 0 rgb(255 255 255 / 0.045),
     var(--lg-shadow);
-  -webkit-backdrop-filter: blur(28px) saturate(135%) contrast(106%);
-  backdrop-filter: blur(28px) saturate(135%) contrast(106%);
+  -webkit-backdrop-filter: blur(17px) saturate(165%) contrast(106%);
+  backdrop-filter: blur(17px) saturate(165%) contrast(106%);
 }
 
 :root[data-theme="dark"] .glass :is(
@@ -1107,5 +1107,153 @@ main,
   :root[data-theme="dark"] .stage-intro,
   :root[data-theme="dark"] .hero {
     background: rgb(20 25 29 / 0.96);
+  }
+}
+
+/* Clearer optical layer: let the folded atmosphere remain visible through glass. */
+.topbar .inner,
+.glass,
+.card,
+.page-card,
+.news-card,
+.latest-match-card,
+.history-panel,
+.standings-panel,
+.travel-card,
+.trip-detail,
+.about-football-panel,
+.football-dna-card,
+.favorite-panel,
+.stage-intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.glass-sheen {
+  position: absolute;
+  z-index: 0;
+  inset: -35%;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse 34% 22% at var(--sheen-x, 50%) var(--sheen-y, 10%), rgb(255 255 255 / 0.3), transparent 72%),
+    linear-gradient(116deg, transparent 32%, rgb(255 255 255 / 0.15) 46%, transparent 58%);
+  opacity: 0;
+  transform: rotate(-8deg) translate3d(0, -5%, 0);
+  mix-blend-mode: screen;
+  transition: opacity 450ms var(--lg-ease);
+}
+
+.is-glass-ready .glass-sheen {
+  animation: lg-sheen-pass 7.5s var(--lg-ease) both;
+  animation-delay: var(--sheen-delay, 0ms);
+}
+
+.glass-refraction {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle 210px at var(--refraction-x, 50%) var(--refraction-y, 50%), rgb(255 255 255 / 0.24), transparent 68%),
+    radial-gradient(circle 290px at var(--refraction-x, 50%) var(--refraction-y, 50%), rgb(var(--lg-accent-2) / 0.045), transparent 76%);
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity 520ms var(--lg-ease);
+}
+
+.glass-refraction.is-active {
+  opacity: 0.82;
+}
+
+.topbar .inner > :not(.glass-sheen):not(.glass-refraction),
+.glass > :not(.glass-sheen):not(.glass-refraction),
+.card > :not(.glass-sheen):not(.glass-refraction),
+.page-card > :not(.glass-sheen):not(.glass-refraction),
+.news-card > :not(.glass-sheen):not(.glass-refraction),
+.latest-match-card > :not(.glass-sheen):not(.glass-refraction),
+.history-panel > :not(.glass-sheen):not(.glass-refraction),
+.standings-panel > :not(.glass-sheen):not(.glass-refraction),
+.travel-card > :not(.glass-sheen):not(.glass-refraction),
+.trip-detail > :not(.glass-sheen):not(.glass-refraction),
+.about-football-panel > :not(.glass-sheen):not(.glass-refraction),
+.football-dna-card > :not(.glass-sheen):not(.glass-refraction),
+.favorite-panel > :not(.glass-sheen):not(.glass-refraction),
+.stage-intro > :not(.glass-sheen):not(.glass-refraction) {
+  position: relative;
+  z-index: 1;
+}
+
+.reveal {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(22px) scale(0.988);
+  transition:
+    opacity 720ms var(--lg-ease) var(--reveal-delay, 0ms),
+    transform 820ms var(--lg-ease) var(--reveal-delay, 0ms),
+    filter 820ms var(--lg-ease) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+@keyframes lg-sheen-pass {
+  0%, 18% {
+    opacity: 0;
+    transform: rotate(-8deg) translate3d(-12%, -8%, 0);
+  }
+  38% {
+    opacity: 0.62;
+  }
+  64%, 100% {
+    opacity: 0;
+    transform: rotate(-8deg) translate3d(16%, 9%, 0);
+  }
+}
+
+:root[data-theme="dark"] .glass-sheen {
+  background:
+    radial-gradient(ellipse 34% 22% at var(--sheen-x, 50%) var(--sheen-y, 10%), rgb(255 255 255 / 0.2), transparent 72%),
+    linear-gradient(116deg, transparent 32%, rgb(142 217 205 / 0.12) 46%, transparent 58%);
+}
+
+@media (max-width: 720px) {
+  .glass-sheen,
+  .glass-refraction {
+    display: none;
+  }
+
+  .reveal {
+    filter: blur(3px);
+    transform: translateY(14px) scale(0.995);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-sheen,
+  .glass-refraction {
+    animation: none !important;
+    transition: none;
+    opacity: 0 !important;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-sheen,
+  .glass-refraction {
+    display: none;
   }
 }
