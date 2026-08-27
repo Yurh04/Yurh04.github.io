@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="foldA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".92"/>
+      <stop offset=".33" stop-color="#dce2e5" stop-opacity=".78"/>
+      <stop offset=".62" stop-color="#f8f9fa" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#bfc7cc" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="foldB" x1=".15" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#c4cdd2" stop-opacity=".78"/>
+      <stop offset=".36" stop-color="#ffffff" stop-opacity=".96"/>
+      <stop offset=".68" stop-color="#d3dade" stop-opacity=".82"/>
+      <stop offset="1" stop-color="#f7f8f9" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="foldC" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#aeb8be" stop-opacity=".62"/>
+      <stop offset=".28" stop-color="#f7f9fa" stop-opacity=".92"/>
+      <stop offset=".7" stop-color="#d8dee2" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".92"/>
+    </linearGradient>
+    <radialGradient id="mist" cx="50%" cy="45%" r="65%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".76"/>
+      <stop offset="1" stop-color="#bcc6cb" stop-opacity=".22"/>
+    </radialGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="28" result="blur"/>
+      <feOffset dx="0" dy="26" result="offset"/>
+      <feColorMatrix in="offset" type="matrix" values="0 0 0 0 0.18 0 0 0 0 0.22 0 0 0 0 0.25 0 0 0 .28 0"/>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <filter id="mistBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="52"/>
+    </filter>
+  </defs>
+  <ellipse cx="810" cy="600" rx="730" ry="550" fill="url(#mist)" filter="url(#mistBlur)"/>
+  <path d="M-160 84C124 28 296 192 496 216c221 27 349-131 571-116 235 16 349 235 694 187v212c-292 54-453-130-673-144-250-15-379 171-643 123C199 433 57 284-160 342Z" fill="url(#foldA)" filter="url(#softShadow)"/>
+  <path d="M-118 1135c181-296 403-465 626-402 205 58 270 326 491 348 213 21 348-202 625-289v320c-281 112-445 151-667 60-203-83-303-270-501-216-187 50-300 223-431 334Z" fill="url(#foldB)" filter="url(#softShadow)"/>
+  <path d="M110 1275c89-284 206-560 431-628 207-62 347 74 433 258 88 190 184 286 427 205l145 212c-338 138-563 10-694-223-86-151-141-243-262-204-126 41-172 222-203 380Z" fill="url(#foldC)" filter="url(#softShadow)"/>
+  <path d="M1176-96c-76 223-234 344-392 412-178 77-278 159-244 328 31 153 179 218 274 340l-217 145c-174-174-326-322-304-548 25-256 251-351 437-428 142-58 222-148 259-287Z" fill="url(#foldB)" filter="url(#softShadow)"/>
+  <path d="M1647 76c-253 73-434 181-449 361-15 176 125 270 206 412 85 148 77 279-11 439l-245-38c86-190 51-305-57-435-131-158-216-330-121-512 98-189 349-272 573-305Z" fill="url(#foldA)" filter="url(#softShadow)"/>
+</svg>

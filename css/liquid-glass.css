@@ -1,0 +1,1111 @@
+/*
+ * Liquid Glass v3 — clear spatial glass
+ * Inspired by optical glass principles: neutral material, visible background,
+ * bright curved rims, restrained shadows, and floating depth.
+ */
+
+:root {
+  --lg-ink: #10161c;
+  --lg-ink-soft: #48515b;
+  --lg-accent: 71 201 174;
+  --lg-accent-2: 73 121 229;
+  --lg-signal: 187 255 54;
+  --lg-panel: rgb(255 255 255 / 0.085);
+  --lg-panel-hover: rgb(255 255 255 / 0.14);
+  --lg-inset: rgb(255 255 255 / 0.12);
+  --lg-inset-hover: rgb(255 255 255 / 0.2);
+  --lg-border: rgb(255 255 255 / 0.78);
+  --lg-border-soft: rgb(255 255 255 / 0.48);
+  --lg-rim: rgb(255 255 255 / 0.96);
+  --lg-shadow: 0 28px 90px rgb(41 48 55 / 0.09), 0 6px 22px rgb(41 48 55 / 0.05);
+  --lg-shadow-hover: 0 34px 100px rgb(41 48 55 / 0.12), 0 10px 28px rgb(41 48 55 / 0.07);
+  --lg-radius-sm: 18px;
+  --lg-radius: 28px;
+  --lg-radius-lg: 36px;
+  --lg-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sans: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html {
+  background: #d9dee1;
+}
+
+body {
+  color: var(--lg-ink);
+  background:
+    radial-gradient(circle at 18% 18%, rgb(255 255 255 / 0.56), transparent 30rem),
+    radial-gradient(circle at 82% 82%, rgb(168 178 185 / 0.34), transparent 34rem),
+    linear-gradient(145deg, #d7dde0 0%, #f2f4f5 48%, #cbd2d6 100%);
+  background-attachment: fixed;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -6%;
+  z-index: -2;
+  pointer-events: none;
+  background: url("../assets/liquid-folds.svg") center / cover no-repeat;
+  opacity: 0.92;
+  filter: contrast(1.03) saturate(0.28);
+  transform: scale(1.04);
+  animation: lg-fold-drift 28s ease-in-out infinite alternate;
+  mix-blend-mode: normal;
+}
+
+body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: -1;
+  width: min(46vw, 620px);
+  aspect-ratio: 1;
+  top: var(--glow-y, 28%);
+  left: var(--glow-x, 24%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(var(--lg-accent-2) / 0.075), rgb(var(--lg-accent) / 0.035) 40%, transparent 72%);
+  filter: blur(48px);
+  opacity: 0.8;
+  transition: top 680ms var(--lg-ease), left 680ms var(--lg-ease);
+}
+
+::selection {
+  color: #08130f;
+  background: rgb(var(--lg-signal) / 0.58);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgb(var(--lg-accent-2) / 0.46);
+  outline-offset: 3px;
+}
+
+main,
+.topbar {
+  position: relative;
+}
+
+.container {
+  width: min(1220px, calc(100% - 48px));
+  padding: 46px 0 96px;
+}
+
+/* Main optical material. */
+.topbar .inner,
+.glass,
+.card,
+.page-card,
+.news-card,
+.latest-match-card,
+.history-panel,
+.standings-panel,
+.travel-card,
+.trip-detail,
+.about-football-panel,
+.football-dna-card,
+.favorite-panel,
+.stage-intro {
+  border: 1px solid var(--lg-border);
+  border-radius: var(--lg-radius);
+  background:
+    linear-gradient(138deg, rgb(255 255 255 / 0.13), transparent 34%, rgb(255 255 255 / 0.025) 72%, rgb(255 255 255 / 0.09)),
+    var(--lg-panel);
+  color: var(--lg-ink);
+  box-shadow:
+    inset 0 1px 0 var(--lg-rim),
+    inset 1px 0 0 rgb(255 255 255 / 0.45),
+    inset 0 -1px 0 rgb(255 255 255 / 0.28),
+    inset -1px 0 0 rgb(255 255 255 / 0.16),
+    0 1px 0 rgb(41 48 55 / 0.06),
+    var(--lg-shadow);
+  -webkit-backdrop-filter: blur(26px) saturate(155%) contrast(104%);
+  backdrop-filter: blur(26px) saturate(155%) contrast(104%);
+}
+
+/* No nested backdrop-filter: the outer glass already refracts the scene. */
+.glass :is(
+    .card,
+    .about-football-panel,
+    .football-dna-card,
+    .news-card,
+    .latest-match-card,
+    .history-panel,
+    .standings-panel,
+    .travel-card,
+    .trip-detail,
+    .favorite-panel,
+    .stage-intro
+  ) {
+  border-color: var(--lg-border-soft);
+  background:
+    linear-gradient(138deg, rgb(255 255 255 / 0.18), transparent 38%, rgb(255 255 255 / 0.045)),
+    var(--lg-inset);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.82),
+    inset 0 0 0 1px rgb(255 255 255 / 0.08),
+    0 16px 48px rgb(44 52 59 / 0.065);
+}
+
+/* Floating navigation */
+.topbar {
+  padding: 16px 0 0;
+  background: transparent;
+}
+
+.topbar .inner {
+  width: min(1220px, calc(100% - 48px));
+  min-height: 68px;
+  padding: 10px 12px 10px 22px;
+  border-radius: 28px;
+  background:
+    linear-gradient(142deg, rgb(255 255 255 / 0.18), transparent 45%, rgb(255 255 255 / 0.055)),
+    rgb(255 255 255 / 0.075);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 0 0 1px rgb(255 255 255 / 0.16),
+    0 18px 60px rgb(40 47 53 / 0.08);
+  -webkit-backdrop-filter: blur(28px) saturate(165%) contrast(105%);
+  backdrop-filter: blur(28px) saturate(165%) contrast(105%);
+}
+
+.logo {
+  color: var(--lg-ink);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.topbar-actions {
+  flex-wrap: nowrap;
+}
+
+.nav {
+  gap: 3px;
+  flex-wrap: nowrap;
+}
+
+.nav a,
+.theme-toggle,
+.lang-toggle {
+  border-radius: 17px;
+}
+
+.nav a {
+  color: #4a535c;
+  transition: color 220ms ease, background-color 220ms ease, box-shadow 260ms ease, transform 360ms var(--lg-ease);
+}
+
+.nav a:hover {
+  color: #121920;
+  background: rgb(255 255 255 / 0.11);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.7);
+  transform: translateY(-1px) scale(1.015);
+}
+
+.nav a.is-active {
+  color: #0a1516;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.34), rgb(255 255 255 / 0.1)),
+    rgb(255 255 255 / 0.11);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 -1px 0 rgb(255 255 255 / 0.26),
+    0 8px 26px rgb(45 54 61 / 0.075);
+}
+
+.theme-toggle,
+.lang-toggle {
+  border-color: rgb(255 255 255 / 0.64);
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.2), transparent),
+    rgb(255 255 255 / 0.065);
+  color: #263039;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 8px 22px rgb(42 50 58 / 0.05);
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+  color: #0c1419;
+  border-color: rgb(255 255 255 / 0.92);
+  background: rgb(255 255 255 / 0.14);
+  box-shadow: inset 0 1px 0 #fff, 0 10px 28px rgb(42 50 58 / 0.08);
+  transform: translateY(-1px) scale(1.015);
+}
+
+/* Large page windows */
+.container > section.glass {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(30px, 5vw, 62px);
+  border: 1px solid rgb(255 255 255 / 0.8);
+  border-radius: var(--lg-radius-lg);
+  background:
+    linear-gradient(132deg, rgb(255 255 255 / 0.11), transparent 34%, rgb(255 255 255 / 0.025) 76%),
+    rgb(255 255 255 / 0.055);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 1px 0 0 rgb(255 255 255 / 0.48),
+    inset 0 -1px 0 rgb(255 255 255 / 0.3),
+    0 1px 0 rgb(37 44 50 / 0.06),
+    0 30px 100px rgb(37 44 50 / 0.08);
+  -webkit-backdrop-filter: blur(22px) saturate(145%) contrast(103%);
+  backdrop-filter: blur(22px) saturate(145%) contrast(103%);
+}
+
+.container > section.glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+.container > section.glass::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 420px at var(--glow-x, 24%) var(--glow-y, 26%), rgb(255 255 255 / 0.17), transparent 70%),
+    linear-gradient(112deg, rgb(255 255 255 / 0.12), transparent 22%, transparent 78%, rgb(255 255 255 / 0.055));
+  opacity: 0.82;
+}
+
+.container > section.glass::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: calc(var(--lg-radius-lg) - 1px);
+  border-top: 1px solid rgb(255 255 255 / 0.54);
+  border-left: 1px solid rgb(255 255 255 / 0.2);
+  opacity: 0.72;
+}
+
+.section {
+  margin-top: 76px;
+}
+
+.section-title {
+  color: var(--lg-ink);
+  font-size: clamp(2.1rem, 4.4vw, 3.9rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.section-title > span:first-child {
+  width: 40px;
+  height: 3px;
+  flex: 0 0 40px;
+  background: linear-gradient(90deg, rgb(var(--lg-accent)), rgb(var(--lg-accent-2)));
+  box-shadow: none;
+}
+
+.container > .glass .hero-title,
+.football-hero h1 {
+  color: var(--lg-ink);
+  font-size: clamp(3.8rem, 8vw, 7.6rem);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 0.86;
+  text-shadow: none;
+  text-wrap: balance;
+}
+
+.container > .glass .hero-subtitle,
+.muted-text,
+.section-heading p,
+.page-card p,
+.about-midfield-notes p,
+.football-dna-card p,
+.stage-intro p,
+.favorite-copy p,
+.football-hero p,
+.timeline-item p,
+.trip-detail p,
+.travel-card span,
+.match-loading,
+.match-source,
+.latest-match-card .venue {
+  color: var(--lg-ink-soft);
+}
+
+/* About page: two overlapping floating windows. */
+.about-split {
+  grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
+  gap: clamp(36px, 6vw, 76px);
+  align-items: center;
+}
+
+.about-split > div:first-child {
+  align-self: center;
+}
+
+.about-football-panel {
+  position: relative;
+  overflow: hidden;
+  margin: 46px -8px -22px 0;
+  border-radius: 32px;
+}
+
+.about-football-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(125deg, rgb(255 255 255 / 0.12), transparent 36%, rgb(var(--lg-accent) / 0.035));
+}
+
+.about-pitch-photo,
+.about-midfield-notes,
+.chip,
+.mini-stats div,
+.favorite-note-grid div,
+.badge,
+.pill,
+.quote-strip span {
+  border-color: rgb(255 255 255 / 0.54);
+  border-radius: var(--lg-radius-sm);
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.16), transparent 60%),
+    rgb(255 255 255 / 0.075);
+  color: #1b2930;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.78), inset 0 -1px 0 rgb(255 255 255 / 0.16);
+}
+
+.chip {
+  min-height: 48px;
+  padding-inline: 17px;
+}
+
+.about-midfield-notes {
+  margin-top: 12px;
+}
+
+.football-dna-grid {
+  gap: 20px;
+}
+
+.football-dna-card,
+.page-card,
+.news-card,
+.travel-card {
+  transition: transform 420ms var(--lg-ease), border-color 260ms ease, box-shadow 420ms ease, background-color 260ms ease;
+}
+
+.football-dna-card:hover,
+.page-card:hover,
+.news-card:hover,
+.travel-card:hover {
+  border-color: rgb(255 255 255 / 0.96);
+  background:
+    linear-gradient(138deg, rgb(255 255 255 / 0.22), transparent 42%),
+    var(--lg-panel-hover);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 -1px 0 rgb(255 255 255 / 0.24),
+    var(--lg-shadow-hover);
+}
+
+.football-dna-card:hover,
+.news-card:hover,
+.travel-card:hover {
+  transform: translateY(-7px) scale(1.008);
+}
+
+.football-dna-card img,
+.mosaic-card,
+.favorite-visual,
+.ronaldo-main,
+.ronaldo-gallery figure,
+.gaming-shot,
+.stadium-grid img,
+.video-frame,
+.map-wrap {
+  border-radius: 22px;
+}
+
+/* Homepage signature: a clear floating sheet over the sculptural background. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: min(690px, calc(100svh - 150px));
+  padding: clamp(38px, 6vw, 76px);
+  border: 1px solid rgb(255 255 255 / 0.82);
+  border-radius: 40px;
+  background:
+    linear-gradient(132deg, rgb(255 255 255 / 0.1), transparent 38%, rgb(255 255 255 / 0.025)),
+    rgb(255 255 255 / 0.045);
+  color: var(--lg-ink);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 1px 0 0 rgb(255 255 255 / 0.45),
+    inset 0 -1px 0 rgb(255 255 255 / 0.28),
+    0 34px 110px rgb(36 43 49 / 0.09);
+  -webkit-backdrop-filter: blur(18px) saturate(140%) contrast(104%);
+  backdrop-filter: blur(18px) saturate(140%) contrast(104%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(62vw, 820px);
+  aspect-ratio: 1;
+  right: -22%;
+  top: -34%;
+  border: 1px solid rgb(255 255 255 / 0.62);
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 34%, rgb(255 255 255 / 0.1), transparent 62%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.72), 0 24px 80px rgb(44 51 57 / 0.04);
+  transform: rotate(-12deg);
+  animation: lg-orbit 18s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 39px;
+  background: radial-gradient(circle 380px at var(--glow-x, 22%) var(--glow-y, 28%), rgb(255 255 255 / 0.18), transparent 72%);
+}
+
+.hero-content,
+.hero-interests {
+  z-index: 1;
+}
+
+.hero-content {
+  width: min(690px, 68%);
+  color: var(--lg-ink);
+}
+
+.hero .hero-title {
+  color: var(--lg-ink);
+  font-size: clamp(4.6rem, 10vw, 8.8rem);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 0.82;
+  text-shadow: none;
+}
+
+.hero .hero-subtitle {
+  color: #343e47;
+}
+
+.hero-intro {
+  color: #3f4952;
+}
+
+.hero-actions {
+  gap: 12px 22px;
+}
+
+.hero-cta {
+  border: 1px solid rgb(255 255 255 / 0.76);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.26), transparent 62%),
+    rgb(255 255 255 / 0.1);
+  color: #10181d;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 -1px 0 rgb(255 255 255 / 0.24),
+    0 14px 38px rgb(42 49 56 / 0.08);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+}
+
+.hero-cta:hover {
+  background: rgb(255 255 255 / 0.18);
+  color: #0b1216;
+  box-shadow: inset 0 1px 0 #fff, 0 18px 46px rgb(42 49 56 / 0.11);
+  transform: translateY(-2px) scale(1.015);
+}
+
+.hero-link {
+  color: #232d34;
+  border-color: rgb(18 27 33 / 0.32);
+}
+
+.hero-link:hover {
+  color: #050a0d;
+  border-color: #11181c;
+}
+
+.socials a {
+  border-color: rgb(255 255 255 / 0.66);
+  background: rgb(255 255 255 / 0.07);
+  color: #142027;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.82), 0 10px 30px rgb(42 49 56 / 0.06);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
+}
+
+.socials a:hover {
+  border-color: rgb(255 255 255 / 0.94);
+  background: rgb(255 255 255 / 0.14);
+  color: #081012;
+}
+
+.hero-interests {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding: 16px 18px;
+  border: 1px solid rgb(255 255 255 / 0.72);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.14), transparent 46%),
+    rgb(255 255 255 / 0.065);
+  color: var(--lg-ink);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 -1px 0 rgb(255 255 255 / 0.22),
+    0 16px 50px rgb(41 48 54 / 0.07);
+  -webkit-backdrop-filter: blur(26px) saturate(150%);
+  backdrop-filter: blur(26px) saturate(150%);
+}
+
+.interest-label {
+  color: #5b646c;
+}
+
+.interest-copy p {
+  color: #263138;
+}
+
+.hero-interests .chip {
+  border-color: rgb(255 255 255 / 0.62);
+  border-radius: 16px;
+  background: rgb(255 255 255 / 0.075);
+  color: #182329;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.72);
+}
+
+.explore-section {
+  padding-top: 38px;
+}
+
+.section-heading {
+  gap: 44px;
+}
+
+.page-grid {
+  gap: 20px;
+  align-items: start;
+}
+
+.page-card {
+  min-height: 244px;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.page-card:nth-child(1) {
+  grid-column: span 5;
+}
+
+.page-card:nth-child(2) {
+  grid-column: span 7;
+  margin-top: 38px;
+}
+
+.page-card:nth-child(3) {
+  grid-column: span 4;
+}
+
+.page-card:nth-child(4) {
+  grid-column: span 5;
+  margin-top: 24px;
+}
+
+.page-card:nth-child(5) {
+  grid-column: span 3;
+  margin-top: -14px;
+}
+
+.page-card:hover {
+  transform: translateY(-7px) scale(1.012);
+}
+
+.page-card::after {
+  width: 44px;
+  height: 44px;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 0.64);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.075);
+  color: #172329;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.76);
+}
+
+.page-card h3,
+.card h3,
+.history-panel h3,
+.about-midfield-notes h3,
+.football-dna-card h3,
+.about-crest-line,
+.stage-intro h2,
+.favorite-copy h2,
+.latest-match-card .teams,
+.latest-match-card .scoreline {
+  color: var(--lg-ink);
+}
+
+.page-index,
+.emph,
+.match-source a,
+.standings-table .points {
+  color: #11756e;
+}
+
+.footer {
+  color: #4c565e;
+}
+
+.footer a {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #195f5b;
+}
+
+.match-source a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.leaflet-touch .leaflet-bar a {
+  width: 44px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+}
+
+/* Shared system states remain legible on clear material. */
+.empty-state,
+.error-state {
+  border-radius: var(--lg-radius-sm);
+  background: rgb(255 255 255 / 0.08);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.65);
+}
+
+/* Dark material */
+:root[data-theme="dark"] {
+  --lg-ink: #f4f7f8;
+  --lg-ink-soft: #bdc5ca;
+  --lg-panel: rgb(4 8 11 / 0.12);
+  --lg-panel-hover: rgb(255 255 255 / 0.065);
+  --lg-inset: rgb(255 255 255 / 0.04);
+  --lg-inset-hover: rgb(255 255 255 / 0.075);
+  --lg-border: rgb(255 255 255 / 0.2);
+  --lg-border-soft: rgb(255 255 255 / 0.13);
+  --lg-rim: rgb(255 255 255 / 0.3);
+  --lg-shadow: 0 30px 100px rgb(0 0 0 / 0.28), 0 8px 26px rgb(0 0 0 / 0.16);
+  --lg-shadow-hover: 0 38px 110px rgb(0 0 0 / 0.36), 0 12px 32px rgb(0 0 0 / 0.2);
+}
+
+:root[data-theme="dark"] html {
+  background: #080a0c;
+}
+
+:root[data-theme="dark"] body {
+  color: var(--lg-ink);
+  background:
+    radial-gradient(circle at 18% 18%, rgb(68 80 87 / 0.3), transparent 30rem),
+    radial-gradient(circle at 82% 82%, rgb(24 31 36 / 0.5), transparent 34rem),
+    linear-gradient(145deg, #0a0d0f 0%, #171c20 48%, #090b0d 100%);
+}
+
+:root[data-theme="dark"] body::before {
+  opacity: 0.3;
+  filter: brightness(0.84) contrast(1.12) saturate(0.1);
+  mix-blend-mode: screen;
+}
+
+:root[data-theme="dark"] body::after {
+  background: radial-gradient(circle, rgb(var(--lg-accent-2) / 0.11), rgb(var(--lg-accent) / 0.04) 38%, transparent 72%);
+  opacity: 0.68;
+}
+
+:root[data-theme="dark"] .topbar {
+  background: transparent;
+}
+
+:root[data-theme="dark"] .topbar .inner,
+:root[data-theme="dark"] .glass,
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .page-card,
+:root[data-theme="dark"] .news-card,
+:root[data-theme="dark"] .latest-match-card,
+:root[data-theme="dark"] .history-panel,
+:root[data-theme="dark"] .standings-panel,
+:root[data-theme="dark"] .travel-card,
+:root[data-theme="dark"] .trip-detail,
+:root[data-theme="dark"] .about-football-panel,
+:root[data-theme="dark"] .football-dna-card,
+:root[data-theme="dark"] .favorite-panel,
+:root[data-theme="dark"] .stage-intro,
+:root[data-theme="dark"] .container > section.glass {
+  border-color: var(--lg-border);
+  background:
+    linear-gradient(138deg, rgb(255 255 255 / 0.065), transparent 38%, rgb(255 255 255 / 0.015)),
+    var(--lg-panel);
+  color: var(--lg-ink);
+  box-shadow:
+    inset 0 1px 0 var(--lg-rim),
+    inset 1px 0 0 rgb(255 255 255 / 0.08),
+    inset 0 -1px 0 rgb(255 255 255 / 0.045),
+    var(--lg-shadow);
+  -webkit-backdrop-filter: blur(28px) saturate(135%) contrast(106%);
+  backdrop-filter: blur(28px) saturate(135%) contrast(106%);
+}
+
+:root[data-theme="dark"] .glass :is(
+    .card,
+    .about-football-panel,
+    .football-dna-card,
+    .news-card,
+    .latest-match-card,
+    .history-panel,
+    .standings-panel,
+    .travel-card,
+    .trip-detail,
+    .favorite-panel,
+    .stage-intro
+  ) {
+  border-color: var(--lg-border-soft);
+  background:
+    linear-gradient(138deg, rgb(255 255 255 / 0.06), transparent 42%),
+    var(--lg-inset);
+  color: var(--lg-ink);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.13), 0 18px 54px rgb(0 0 0 / 0.16);
+}
+
+:root[data-theme="dark"] .container > section.glass::before {
+  background:
+    radial-gradient(circle 420px at var(--glow-x, 24%) var(--glow-y, 26%), rgb(255 255 255 / 0.045), transparent 70%),
+    linear-gradient(112deg, rgb(255 255 255 / 0.04), transparent 24%, transparent 78%, rgb(255 255 255 / 0.018));
+}
+
+:root[data-theme="dark"] .container > section.glass::after {
+  border-color: rgb(255 255 255 / 0.11);
+}
+
+:root[data-theme="dark"] .logo,
+:root[data-theme="dark"] .section-title,
+:root[data-theme="dark"] .section-title > span:last-child,
+:root[data-theme="dark"] .container > .glass .hero-title,
+:root[data-theme="dark"] .football-hero h1,
+:root[data-theme="dark"] .page-card h3,
+:root[data-theme="dark"] .card h3,
+:root[data-theme="dark"] .history-panel h3,
+:root[data-theme="dark"] .about-midfield-notes h3,
+:root[data-theme="dark"] .football-dna-card h3,
+:root[data-theme="dark"] .about-crest-line,
+:root[data-theme="dark"] .stage-intro h2,
+:root[data-theme="dark"] .favorite-copy h2,
+:root[data-theme="dark"] .latest-match-card .teams,
+:root[data-theme="dark"] .latest-match-card .scoreline {
+  color: var(--lg-ink);
+}
+
+:root[data-theme="dark"] .nav a,
+:root[data-theme="dark"] .container > .glass .hero-subtitle,
+:root[data-theme="dark"] .muted-text,
+:root[data-theme="dark"] .section-heading p,
+:root[data-theme="dark"] .page-card p,
+:root[data-theme="dark"] .about-midfield-notes p,
+:root[data-theme="dark"] .football-dna-card p,
+:root[data-theme="dark"] .stage-intro p,
+:root[data-theme="dark"] .favorite-copy p,
+:root[data-theme="dark"] .football-hero p,
+:root[data-theme="dark"] .timeline-item p,
+:root[data-theme="dark"] .trip-detail p,
+:root[data-theme="dark"] .travel-card span,
+:root[data-theme="dark"] .match-loading,
+:root[data-theme="dark"] .match-source,
+:root[data-theme="dark"] .latest-match-card .venue,
+:root[data-theme="dark"] .footer {
+  color: var(--lg-ink-soft);
+}
+
+:root[data-theme="dark"] .nav a:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 0.055);
+}
+
+:root[data-theme="dark"] .nav a.is-active {
+  color: #fff;
+  background: linear-gradient(145deg, rgb(255 255 255 / 0.11), rgb(255 255 255 / 0.025));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2), 0 8px 28px rgb(0 0 0 / 0.16);
+}
+
+:root[data-theme="dark"] .theme-toggle,
+:root[data-theme="dark"] .lang-toggle,
+:root[data-theme="dark"] .about-pitch-photo,
+:root[data-theme="dark"] .about-midfield-notes,
+:root[data-theme="dark"] .chip,
+:root[data-theme="dark"] .mini-stats div,
+:root[data-theme="dark"] .favorite-note-grid div,
+:root[data-theme="dark"] .badge,
+:root[data-theme="dark"] .pill,
+:root[data-theme="dark"] .quote-strip span,
+:root[data-theme="dark"] .empty-state,
+:root[data-theme="dark"] .error-state {
+  border-color: rgb(255 255 255 / 0.12);
+  background: rgb(255 255 255 / 0.035);
+  color: #e6ebee;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.11);
+}
+
+:root[data-theme="dark"] .hero {
+  border-color: rgb(255 255 255 / 0.2);
+  background:
+    linear-gradient(132deg, rgb(255 255 255 / 0.055), transparent 38%, rgb(255 255 255 / 0.012)),
+    rgb(4 8 11 / 0.1);
+  color: var(--lg-ink);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28), inset 1px 0 0 rgb(255 255 255 / 0.08), var(--lg-shadow);
+}
+
+:root[data-theme="dark"] .hero::before {
+  border-color: rgb(255 255 255 / 0.12);
+  background: radial-gradient(circle at 32% 34%, rgb(255 255 255 / 0.035), transparent 62%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12);
+}
+
+:root[data-theme="dark"] .hero::after {
+  background: radial-gradient(circle 380px at var(--glow-x, 22%) var(--glow-y, 28%), rgb(255 255 255 / 0.055), transparent 72%);
+}
+
+:root[data-theme="dark"] .hero-content,
+:root[data-theme="dark"] .hero .hero-title {
+  color: var(--lg-ink);
+}
+
+:root[data-theme="dark"] .hero .hero-subtitle,
+:root[data-theme="dark"] .hero-intro,
+:root[data-theme="dark"] .interest-copy p {
+  color: #c4ccd1;
+}
+
+:root[data-theme="dark"] .hero-link {
+  color: #e3e8ea;
+  border-color: rgb(255 255 255 / 0.32);
+}
+
+:root[data-theme="dark"] .hero-cta,
+:root[data-theme="dark"] .socials a,
+:root[data-theme="dark"] .hero-interests,
+:root[data-theme="dark"] .hero-interests .chip {
+  border-color: rgb(255 255 255 / 0.15);
+  background: rgb(255 255 255 / 0.04);
+  color: #f5f7f8;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.14), 0 14px 42px rgb(0 0 0 / 0.16);
+}
+
+:root[data-theme="dark"] .interest-label {
+  color: #9ca8ae;
+}
+
+:root[data-theme="dark"] .page-index,
+:root[data-theme="dark"] .emph,
+:root[data-theme="dark"] .match-source a,
+:root[data-theme="dark"] .standings-table .points,
+:root[data-theme="dark"] .footer a {
+  color: #7ee0ce;
+}
+
+@keyframes lg-fold-drift {
+  from {
+    transform: translate3d(-1.2%, -0.6%, 0) scale(1.04);
+  }
+  to {
+    transform: translate3d(1.5%, 1.1%, 0) scale(1.075);
+  }
+}
+
+@keyframes lg-orbit {
+  from {
+    transform: translate3d(-1%, -1%, 0) rotate(-12deg) scale(1);
+  }
+  to {
+    transform: translate3d(3%, 4%, 0) rotate(-7deg) scale(1.045);
+  }
+}
+
+@media (max-width: 980px) {
+  .about-split {
+    grid-template-columns: 1fr;
+  }
+
+  .about-football-panel {
+    margin: 10px 0 -10px;
+  }
+
+  .page-card:nth-child(n) {
+    grid-column: span 6;
+    margin-top: 0;
+  }
+
+  .page-card:last-child {
+    grid-column: span 12;
+  }
+
+  .hero-content {
+    width: min(700px, 82%);
+  }
+}
+
+@media (max-width: 720px) {
+  .container,
+  .topbar .inner {
+    width: min(100% - 24px, 1220px);
+  }
+
+  .topbar {
+    padding-top: max(7px, env(safe-area-inset-top));
+  }
+
+  .topbar .inner {
+    border-radius: 24px;
+  }
+
+  .container {
+    padding-top: 22px;
+    padding-bottom: max(72px, calc(56px + env(safe-area-inset-bottom)));
+  }
+
+  .container > section.glass {
+    padding: 28px 20px;
+    border-radius: 30px;
+  }
+
+  .container > section.glass::after {
+    border-radius: 29px;
+  }
+
+  .container > .glass .hero-title,
+  .football-hero h1 {
+    font-size: clamp(3.35rem, 18vw, 5.3rem);
+  }
+
+  .hero {
+    min-height: calc(100svh - 116px);
+    padding: 40px 22px 186px;
+    border-radius: 30px;
+  }
+
+  .hero::after {
+    border-radius: 29px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero .hero-title {
+    font-size: clamp(3.8rem, 19vw, 5.5rem);
+  }
+
+  .hero-interests {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 22px;
+  }
+
+  .section {
+    margin-top: 54px;
+  }
+
+  .section-title {
+    letter-spacing: -0.045em;
+  }
+
+  .page-card:nth-child(n),
+  .page-card:last-child {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  .page-card {
+    min-height: 188px;
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .hero::before {
+    animation: none;
+  }
+
+  body::after {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .topbar .inner,
+  .glass,
+  .card,
+  .page-card,
+  .news-card,
+  .latest-match-card,
+  .history-panel,
+  .standings-panel,
+  .travel-card,
+  .trip-detail,
+  .about-football-panel,
+  .football-dna-card,
+  .favorite-panel,
+  .stage-intro,
+  .hero {
+    background: rgb(244 246 247 / 0.94);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  :root[data-theme="dark"] .topbar .inner,
+  :root[data-theme="dark"] .glass,
+  :root[data-theme="dark"] .card,
+  :root[data-theme="dark"] .page-card,
+  :root[data-theme="dark"] .news-card,
+  :root[data-theme="dark"] .latest-match-card,
+  :root[data-theme="dark"] .history-panel,
+  :root[data-theme="dark"] .standings-panel,
+  :root[data-theme="dark"] .travel-card,
+  :root[data-theme="dark"] .trip-detail,
+  :root[data-theme="dark"] .about-football-panel,
+  :root[data-theme="dark"] .football-dna-card,
+  :root[data-theme="dark"] .favorite-panel,
+  :root[data-theme="dark"] .stage-intro,
+  :root[data-theme="dark"] .hero {
+    background: rgb(20 25 29 / 0.96);
+  }
+}
