@@ -50,7 +50,7 @@ const TRANSLATIONS = {
     "football.standings.goalDiff": "GD",
     "football.standings.points": "Pts",
     "index.logo": "Jack Yu / Portfolio",
-    "index.hero.subtitle": "Software Engineering @ BUAA · Data & Algorithm Intern",
+    "index.hero.subtitle": "Software engineering student at BUAA",
     "index.hero.intro":
       "I care about the craft behind reliable systems, the intelligence inside useful products, and the stories we collect beyond the screen.",
     "index.hero.cta": "Meet Jack",
@@ -75,9 +75,9 @@ const TRANSLATIONS = {
     "index.card.travel.body": "A map-led collection of routes, photographs, and moments on the road.",
     "about.logo": "Jack Yu / About",
     "about.hero.title": "About Me",
-    "about.hero.subtitle": "SE Student @ BUAA | Data & Algo Intern",
+    "about.hero.subtitle": "Software engineering student at BUAA",
     "about.hero.body":
-      "I'm Jack Yu, a Software Engineering student at BUAA and a data & algorithm intern. I build clean, reliable systems and bring the same midfield mindset to engineering: read the game early, move the ball fast, and make teammates better.",
+      "I'm Jack Yu, a Software Engineering student at BUAA. I build clean, reliable systems and bring the same midfield mindset to engineering: read the game early, move the ball fast, and make teammates better.",
     "about.chip.python": "Python",
     "about.chip.cpp": "C++",
     "about.chip.ai": "AI / ML",
@@ -129,7 +129,7 @@ const TRANSLATIONS = {
     "favorites.ski.kicker": "01 / Skiing",
     "favorites.ski.title": "When I want to clear my head, I go for speed on snow.",
     "favorites.ski.body":
-      "Skiing is the cleanest reset I know. No crowd, no noise, just rhythm, balance, and the feeling of cutting through fresh white tracks. It is the kind of hobby that turns focus into calm.",
+      "A few photos from the slopes. I like working on my turns and spending a day outside in the snow.",
     "favorites.ski.note1.title": "Why it stays",
     "favorites.ski.note1.body": "Fast, quiet, technical, and visually addictive.",
     "favorites.ski.note2.title": "Best part",
@@ -137,7 +137,7 @@ const TRANSLATIONS = {
     "favorites.ronaldo.kicker": "02 / Cristiano Ronaldo",
     "favorites.ronaldo.title": "The aura is part discipline, part theatre, and all conviction.",
     "favorites.ronaldo.body":
-      "Ronaldo has always been more than numbers. It is the posture, the silhouette before kickoff, the obsession with detail, and the way every entrance feels cinematic. He makes ambition look stylish.",
+      "My favorite player. Here are a few photos from his career, including his years at Real Madrid.",
     "favorites.ronaldo.tag1": "Relentless",
     "favorites.ronaldo.tag2": "Sharp",
     "favorites.ronaldo.tag3": "Elite mentality",
@@ -156,7 +156,7 @@ const TRANSLATIONS = {
     "favorites.gaming.kicker": "04 / Gaming",
     "favorites.gaming.title": "Competitive games are part rank grind, part visual memory.",
     "favorites.gaming.body":
-      "Gaming for me is not only about winning. It is the interface glow, the queue-up mood, the soundtrack, and the screenshots you keep because they mark a moment. Honor of Kings is the center of that world right now.",
+      "I play Honor of Kings, FC26, and Peacekeeper Elite. These are a few screenshots I have kept along the way.",
     "football.logo": "Jack Yu / Football",
     "football.hero.title": "Hala Madrid",
     "football.hero.body": "I’m a die-hard Madridista. This page collects the latest Real Madrid updates, fixtures, and match headlines, plus a few personal notes.",
@@ -184,8 +184,50 @@ const TRANSLATIONS = {
     "travel.logo": "Jack Yu / Travel",
     "travel.hero.title": "Travel Gallery",
     "travel.hero.subtitle": "World map · Beijing to every destination.",
+    "travel.hero.body": "A visual log of the places that changed my sense of distance — from short city walks in Asia to a long summer route through Europe.",
+    "travel.fact.destinations": "destinations",
+    "travel.fact.years": "years on the road",
+    "travel.fact.origin": "starting point · Beijing",
+    "travel.journal.kicker": "FIELD NOTES / SELECTED ROUTES",
+    "travel.journal.title": "Every trip leaves a different kind of map.",
+    "travel.journal.body": "Choose a country to reveal the route, a short memory, and a small set of visual references from the cities along the way.",
+    "travel.filter.all": "All trips",
+    "travel.filter.earlier": "Earlier",
+    "travel.filter.count": "{count} trips",
+    "travel.map.origin": "Beijing",
+    "travel.map.destination": "Visited",
+    "travel.map.route": "Routes",
     "travel.viewer.title": "Trip photos",
     "travel.detail.placeholderBody": "Click a travel card to zoom map and show your in-country route.",
+    "home.hello": "Hello, I’m",
+    "home.midfield": "CM · Midfielder / Madridista",
+    "home.intro": "I study software engineering at Beihang. This is where I keep notes on technology, football, travel, and the things I enjoy outside the screen.",
+    "home.about": "A little more about me ↗",
+    "home.photo": "Away from the screen, out on the slopes.",
+    "home.photoLink": "Life in pictures ↗",
+    "home.pages": "Around here",
+    "home.pagesBody": "Some notes. Some everyday life.",
+    "home.notes": "Notes on machine learning, systems, and building products.",
+    "home.travel": "Cities visited and routes collected along the way.",
+    "home.favorites": "Ski days, Cristiano Ronaldo, and a few gaming moments.",
+    "home.football": "A midfielder on the pitch. A Madridista off it. Football ↗",
+    "common.footer.tech": "Jack Yu · Thanks for stopping by.",
+    "about.hero.body": "I’m Jack, a software engineering student at Beihang. I work with Python and C++, and I’m interested in machine learning and how software becomes a useful product. Outside of that, I play midfield and follow Real Madrid.",
+    "favorites.hero.kicker": "Off the clock",
+    "favorites.hero.subtitle": "Skiing, football, and games. A few things I keep coming back to.",
+    "favorites.ski.title": "A day on the slopes",
+    "favorites.ronaldo.title": "Cristiano Ronaldo",
+    "favorites.football.title": "In the stands, on the pitch",
+    "favorites.gaming.title": "After a long day",
+    "favorites.ski.kicker": "Skiing",
+    "favorites.ronaldo.kicker": "Football",
+    "favorites.football.kicker": "Matchday",
+    "favorites.gaming.kicker": "Gaming",
+    "travel.hero.title": "Travel",
+    "travel.hero.subtitle": "Places I’ve been, from 2010 to 2025.",
+    "travel.journal.title": "The travel archive",
+    "travel.journal.body": "Choose a trip to see its route and details.",
+    "travel.journal.kicker": "",
   },
   zh: {
     "common.lang.aria": "切换语言",
@@ -238,7 +280,7 @@ const TRANSLATIONS = {
     "football.standings.goalDiff": "净胜球",
     "football.standings.points": "积分",
     "index.logo": "Jack Yu / 个人主页",
-    "index.hero.subtitle": "北航软件工程 · 数据与算法实习生",
+    "index.hero.subtitle": "北航软件工程专业学生",
     "index.hero.intro": "我关注可靠系统背后的工程细节、真正有用的智能产品，也珍惜屏幕之外一路收集的故事。",
     "index.hero.cta": "认识 Jack",
     "index.hero.secondary": "浏览个人主页",
@@ -262,9 +304,9 @@ const TRANSLATIONS = {
     "index.card.travel.body": "用地图串起路线、照片与沿途的瞬间。",
     "about.logo": "Jack Yu / 关于我",
     "about.hero.title": "关于我",
-    "about.hero.subtitle": "北航软件工程学生 ｜ 数据与算法实习生",
+    "about.hero.subtitle": "北航软件工程专业学生",
     "about.hero.body":
-      "我是 Jack Yu，北航软件工程专业学生，也是一名数据与算法实习生。我喜欢构建干净、可靠的系统，也把中场思维带进工程里：更早读懂局势、更快把球传出去、也让团队配合得更好。",
+      "我是 Jack Yu，北航软件工程专业学生。我喜欢构建干净、可靠的系统，也把中场思维带进工程里：更早读懂局势、更快把球传出去、也让团队配合得更好。",
     "about.chip.python": "Python",
     "about.chip.cpp": "C++",
     "about.chip.ai": "AI / ML",
@@ -313,14 +355,14 @@ const TRANSLATIONS = {
     "favorites.mosaic.gaming": "游戏可以竞争，也可以很私人。",
     "favorites.ski.kicker": "01 / 滑雪",
     "favorites.ski.title": "想把脑子清空的时候，我就去雪地里感受速度。",
-    "favorites.ski.body": "滑雪是我最直接的 reset。没有人群，没有噪音，只有节奏、平衡，还有雪板切开雪面的那种干净感。这种爱好会把专注慢慢变成平静。",
+    "favorites.ski.body": "几张滑雪时留下的照片。喜欢练习转弯，也喜欢在雪地里待上一整天。",
     "favorites.ski.note1.title": "为什么一直喜欢",
     "favorites.ski.note1.body": "够快、够安静、够技术流，也足够上头。",
     "favorites.ski.note2.title": "最喜欢的瞬间",
     "favorites.ski.note2.body": "转弯结束的那一下，整个人像短暂失重。",
     "favorites.ronaldo.kicker": "02 / C 罗",
     "favorites.ronaldo.title": "他的气场，一半来自自律，一半来自表演感，但全部都很坚定。",
-    "favorites.ronaldo.body": "对我来说，Ronaldo 从来不只是数据。他的站姿、开球前的轮廓、对细节的执念，以及每次出场都像电影镜头一样的感觉，都会让野心显得很高级。",
+    "favorites.ronaldo.body": "最喜欢的球员。这里放了几张他的照片，也留下一些皇马时期的回忆。",
     "favorites.ronaldo.tag1": "狠",
     "favorites.ronaldo.tag2": "利落",
     "favorites.ronaldo.tag3": "顶级心态",
@@ -337,7 +379,7 @@ const TRANSLATIONS = {
     "favorites.pitch.body": "更喜欢直塞、后插上、远射，以及永远想多看一眼再把球传出去。",
     "favorites.gaming.kicker": "04 / 游戏",
     "favorites.gaming.title": "竞技游戏一半是上分，一半是氛围记忆。",
-    "favorites.gaming.body": "对我来说，游戏不只是赢。还有界面的光感、排位前的情绪、BGM，以及那些会留下来的截图。现在这个世界里，王者荣耀是最中心的存在。",
+    "favorites.gaming.body": "平时玩王者荣耀、FC26 和和平精英。这里收着几张游戏截图，记录一些值得留下的瞬间。",
     "football.logo": "Jack Yu / 足球",
     "football.hero.title": "Hala Madrid",
     "football.hero.body": "我是很纯粹的 Madridista。这一页会收集最新的皇马动态、赛程、比赛 headlines，以及一些我自己的球迷笔记。",
@@ -364,8 +406,50 @@ const TRANSLATIONS = {
     "travel.logo": "Jack Yu / 旅行",
     "travel.hero.title": "旅行相册",
     "travel.hero.subtitle": "世界地图 · 从北京出发，抵达每一个目的地。",
+    "travel.hero.body": "记录那些改变距离感的地方：从亚洲的短途城市漫步，到一整个夏天穿过欧洲的长线旅程。",
+    "travel.fact.destinations": "个目的地",
+    "travel.fact.years": "年在路上",
+    "travel.fact.origin": "出发地 · 北京",
+    "travel.journal.kicker": "FIELD NOTES / 精选路线",
+    "travel.journal.title": "每一段旅程，都会留下不同的地图。",
+    "travel.journal.body": "选择一个国家，查看沿途路线、一段旅途记忆，以及来自城市的视觉片段。",
+    "travel.filter.all": "全部旅程",
+    "travel.filter.earlier": "更早以前",
+    "travel.filter.count": "{count} 段旅程",
+    "travel.map.origin": "北京",
+    "travel.map.destination": "到访",
+    "travel.map.route": "路线",
     "travel.viewer.title": "旅途照片",
     "travel.detail.placeholderBody": "点击一张旅行卡片，地图会缩放到对应国家，并展示我在当地的路线。",
+    "home.hello": "你好，我是",
+    "home.midfield": "CM · 中场 / Madridista",
+    "home.intro": "在北航读软件工程。这个网站用来记录技术笔记、足球、旅行，还有平时喜欢的东西。",
+    "home.about": "多了解我一点 ↗",
+    "home.photo": "离开屏幕，去雪地里。",
+    "home.photoLink": "生活相册 ↗",
+    "home.pages": "这里都放了些什么",
+    "home.pagesBody": "一些笔记，也有一些生活。",
+    "home.notes": "关于机器学习、系统和做产品的笔记。",
+    "home.travel": "走过的城市，留在地图上的路线。",
+    "home.favorites": "滑雪、C 罗，还有游戏里的几个瞬间。",
+    "home.football": "场上踢中场，场下看皇马。聊聊足球 ↗",
+    "common.footer.tech": "Jack Yu · 谢谢你来看看。",
+    "about.hero.body": "我是 Jack，在北航读软件工程。平时使用 Python 和 C++，关注机器学习，也关心怎样把技术做成能用的产品。学习之外喜欢踢球，踢中场，支持皇马。",
+    "favorites.hero.kicker": "课余时间",
+    "favorites.hero.subtitle": "滑雪、足球、游戏。几个一直喜欢的东西。",
+    "favorites.ski.title": "去滑一天雪",
+    "favorites.ronaldo.title": "克里斯蒂亚诺·罗纳尔多",
+    "favorites.football.title": "看台上，也在球场上",
+    "favorites.gaming.title": "闲下来的时候",
+    "favorites.ski.kicker": "滑雪",
+    "favorites.ronaldo.kicker": "足球",
+    "favorites.football.kicker": "比赛日",
+    "favorites.gaming.kicker": "游戏",
+    "travel.hero.title": "旅行",
+    "travel.hero.subtitle": "2010—2025，走过的一些地方。",
+    "travel.journal.title": "旅行记录",
+    "travel.journal.body": "选一段旅程，看看路线和详情。",
+    "travel.journal.kicker": "",
   },
 };
 
@@ -460,96 +544,14 @@ document.querySelectorAll(".theme-toggle").forEach((button) => {
 applyTheme();
 applyTranslations();
 
-const glow = document.body;
-const updateGlow = (event) => {
-  const x = (event.clientX / window.innerWidth) * 100;
-  const y = (event.clientY / window.innerHeight) * 100;
-  glow.style.setProperty("--glow-x", `${x}%`);
-  glow.style.setProperty("--glow-y", `${y}%`);
-};
-window.addEventListener("mousemove", updateGlow);
-
-// Give each optical surface its own restrained highlight and pointer refraction.
-const glassSurfaceSelector = [
-  ".topbar .inner",
-  ".hero",
-  ".glass",
-  ".card",
-  ".page-card",
-  ".news-card",
-  ".latest-match-card",
-  ".history-panel",
-  ".standings-panel",
-  ".travel-card",
-  ".trip-detail",
-  ".about-football-panel",
-  ".football-dna-card",
-  ".favorite-panel",
-  ".stage-intro",
-].join(",");
-
-const glassSurfaces = Array.from(document.querySelectorAll(glassSurfaceSelector));
-glassSurfaces.forEach((surface, index) => {
-  const sheen = document.createElement("span");
-  sheen.className = "glass-sheen";
-  sheen.setAttribute("aria-hidden", "true");
-  sheen.style.setProperty("--sheen-delay", `${Math.min(index * 85, 680)}ms`);
-
-  const refraction = document.createElement("span");
-  refraction.className = "glass-refraction";
-  refraction.setAttribute("aria-hidden", "true");
-  surface.append(sheen, refraction);
-
-  surface.addEventListener("pointermove", (event) => {
-    if (event.pointerType === "touch") {
-      return;
-    }
-    const rect = surface.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 100;
-    const y = ((event.clientY - rect.top) / rect.height) * 100;
-    refraction.style.setProperty("--refraction-x", `${Math.max(0, Math.min(100, x))}%`);
-    refraction.style.setProperty("--refraction-y", `${Math.max(0, Math.min(100, y))}%`);
-    refraction.classList.add("is-active");
-  });
-
-  surface.addEventListener("pointerleave", () => {
-    refraction.classList.remove("is-active");
-  });
-});
-
-requestAnimationFrame(() => {
-  document.documentElement.classList.add("is-glass-ready");
-});
-
-const reveals = document.querySelectorAll("[data-reveal]");
-if (reveals.length > 0) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  reveals.forEach((el, index) => {
-    el.classList.add("reveal");
-    el.style.setProperty("--reveal-delay", `${Math.min(index * 90, 540)}ms`);
-    observer.observe(el);
-  });
-}
-
 const mapContainer = document.getElementById("travel-map");
 if (mapContainer && window.L) {
   const map = L.map("travel-map", {
     zoomControl: true,
     scrollWheelZoom: true,
   });
-  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
-    attribution: "&copy; Esri &mdash; Esri, DeLorme, NAVTEQ, USGS, NASA, METI, NRCAN, GEBCO, NOAA, iPC",
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+    attribution: "&copy; Esri, HERE, Garmin, FAO, NOAA, USGS",
     maxZoom: 16,
     errorTileUrl:
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=",
@@ -573,13 +575,18 @@ if (mapContainer && window.L) {
 
     L.circleMarker(originLatLng, {
       radius: 7,
-      color: "#5de4c7",
-      weight: 2,
-      fillColor: "#5de4c7",
-      fillOpacity: 0.8,
+      color: "#7b3340",
+      weight: 3,
+      fillColor: "#d1b344",
+      fillOpacity: 1,
     })
       .addTo(map)
-      .bindPopup(t("travel.city.beijing"));
+    .bindPopup(t("travel.city.beijing"));
+    L.circleMarker(originLatLng, { radius: 0, opacity: 0, fillOpacity: 0 }).addTo(map).bindTooltip(t("travel.city.beijing"), {
+      direction: "top",
+      offset: [0, -7],
+      className: "travel-map-label travel-map-label-origin",
+    });
 
     const visited = new Set([
       "china",
@@ -621,19 +628,20 @@ if (mapContainer && window.L) {
         bounds.push(target);
         L.circleMarker(target, {
           radius: 6,
-          color: "#3ba1ff",
+          color: "#65705c",
           weight: 2,
-          fillColor: "#3ba1ff",
-          fillOpacity: 0.85,
+          fillColor: "#7b3340",
+          fillOpacity: 0.92,
         })
           .addTo(map)
-          .bindPopup(point.name);
+          .bindTooltip(point.name, { direction: "top", offset: [0, -7], className: "travel-map-label" })
+          .bindPopup(`<strong>${point.name}</strong><br><span>${t("travel.map.destination")}</span>`);
 
         L.polyline([originLatLng, target], {
-          color: "#5de4c7",
-          weight: 2,
-          opacity: 0.7,
-          dashArray: "6 8",
+          color: "#7b3340",
+          weight: 1.5,
+          opacity: 0.42,
+          dashArray: "4 9",
         }).addTo(map);
       });
 
@@ -664,11 +672,159 @@ if (mapContainer && window.L) {
     const tripTitle = document.getElementById("trip-detail-title");
     const tripYear = document.getElementById("trip-detail-year");
     const tripRoute = document.getElementById("trip-detail-route");
+    const tripStory = document.getElementById("trip-detail-story");
     const tripPhotoGrid = document.getElementById("trip-photo-grid");
     const mapPhotoViewer = document.getElementById("map-photo-viewer");
     const mapPhotoViewerTitle = document.getElementById("map-photo-viewer-title");
     const mapPhotoViewerGrid = document.getElementById("map-photo-viewer-grid");
     const mapPhotoViewerClose = document.getElementById("map-photo-viewer-close");
+
+    const travelStories = {
+      "South Korea|2025": {
+        en: "Seoul was a first taste of a city that moves at full speed: late-night streets, quiet palace courtyards, and excellent small rituals between both.",
+        zh: "首尔是一座全速运转的城市：深夜街道、安静的宫殿庭院，以及藏在两者之间的细小仪式感。",
+      },
+      "Singapore|2025": {
+        en: "A compact city with an almost architectural sense of order. The best moments were the humid walks where towers, hawker stalls, and gardens kept changing the frame.",
+        zh: "一座有着建筑般秩序感的城市。最喜欢在湿热的空气里走路，看高楼、小贩中心与花园不断切换成新的画面。",
+      },
+      "Qatar|2024": {
+        en: "Doha felt like a pause between worlds: pale light, long horizons, and a waterfront that makes the desert feel cinematic.",
+        zh: "多哈像世界之间的一次停顿：苍白的光线、开阔的地平线，以及让沙漠变得像电影场景一样的海滨。",
+      },
+      "UAE|2024": {
+        en: "Abu Dhabi balances monumental spaces with a slower rhythm. I remember the contrast between cool interiors and the white heat outside.",
+        zh: "阿布扎比把宏大的空间和缓慢的节奏放在一起。记忆最深的是冷气充足的室内，与室外白热的阳光之间的反差。",
+      },
+      "Spain|2024.07-08": {
+        en: "A summer route built around Madrid, Toledo, and Mallorca: football nights, old stone, and a final stretch of Mediterranean blue.",
+        zh: "围绕马德里、托莱多和马略卡展开的夏日路线：足球之夜、古老石墙，以及最后一段地中海蓝。",
+      },
+      "Portugal|2024.07-08": {
+        en: "Portugal was a slower counterpoint to the Spanish leg — tiled facades, river light, and cities that reward wandering without a plan.",
+        zh: "葡萄牙让西班牙之后的旅程慢了下来：瓷砖立面、河面光线，以及适合不带计划随意漫步的城市。",
+      },
+      "Austria|2023.07-08": {
+        en: "Vienna and Salzburg made culture feel tangible: grand rooms, small cafés, and mountain air arriving at the edge of the city.",
+        zh: "维也纳和萨尔茨堡让文化变得触手可及：宏大的厅室、小小的咖啡馆，以及在城市边缘抵达的山间空气。",
+      },
+      "Germany|2023.07-08": {
+        en: "The longest route in the archive. Seven stops stitched together by trains, football memories, old town squares, and the pleasure of watching a country change outside the window.",
+        zh: "相册里最长的一条路线。七座城市由火车、足球记忆和老城广场串起，也串起了车窗外不断变化的德国。",
+      },
+      "Netherlands|2023.07-08": {
+        en: "Amsterdam is best read at bicycle speed: water at the edge of the street, narrow houses, and a city that leaves room for detours.",
+        zh: "阿姆斯特丹适合用自行车的速度去阅读：街道边的水面、细长的房子，以及总为绕路留出空间的城市。",
+      },
+      "Belgium|2023.07-08": {
+        en: "Brussels offered a short, rich stop — ornate squares, warm café interiors, and the feeling that every corner had a different texture.",
+        zh: "布鲁塞尔是一站短而丰富的停留：华丽的广场、温暖的咖啡馆，以及每个转角都拥有不同质感的城市。",
+      },
+      "United Kingdom|2019": {
+        en: "London is a city of layers: museums in the morning, a long walk by the river, and a different accent every few minutes.",
+        zh: "伦敦是一座有层次的城市：早上的博物馆、沿河的长距离步行，以及每隔几分钟就会出现的不同口音。",
+      },
+      "United States|2016": {
+        en: "New York made scale feel physical. The trip was a collage of streets, skylines, noise, and the rare quiet found above it all.",
+        zh: "纽约让尺度变得具体可感。这次旅程由街道、天际线、噪音，以及偶尔在高处找到的安静拼成。",
+      },
+      "Italy|2019": {
+        en: "Rome, Florence, Venice, and Milan gave the route four different tempos — ruins, Renaissance geometry, water, and modern design.",
+        zh: "罗马、佛罗伦萨、威尼斯和米兰给了这条路线四种节奏：遗迹、文艺复兴的几何、水城，以及现代设计。",
+      },
+      "Switzerland|2019": {
+        en: "Switzerland was the landscape chapter: lakes, rail lines, high passes, and the clean silence of the Alps.",
+        zh: "瑞士是旅程里的风景章节：湖泊、铁路、高山隘口，以及阿尔卑斯山清澈的安静。",
+      },
+      "France|2018": {
+        en: "Paris rewards repetition. The more slowly you cross it, the more the city reveals in its bridges, bookshops, and evening light.",
+        zh: "巴黎值得反复走。速度越慢，桥梁、书店和黄昏光线里的细节就越多。",
+      },
+      "Spain|2018": {
+        en: "An earlier Spain trip, remembered through warm stone, long lunches, and the first time a city made football feel like a local language.",
+        zh: "更早的一次西班牙之行，记忆里有温暖的石墙、漫长的午餐，以及第一次感受到足球像一种当地语言。",
+      },
+      "Japan|2014": {
+        en: "Tokyo was an early lesson in visual density: small signs, precise trains, bright crossings, and calm corners hiding behind them.",
+        zh: "东京很早就教会我什么是视觉密度：细小的招牌、精准的列车、明亮的路口，以及藏在其后的安静角落。",
+      },
+      "Taiwan|2015": {
+        en: "Taipei felt generous and immediate — night markets, mountain edges, and the kind of food memory that brings a whole street back.",
+        zh: "台北让人感到亲切而直接：夜市、山的边缘，以及能把整条街一起唤回来的食物记忆。",
+      },
+      "Hong Kong|2010": {
+        en: "Hong Kong was one of the first cities that made vertical space memorable: harbour light below, dense life above, and movement everywhere.",
+        zh: "香港是最早让我记住垂直空间的城市之一：下面是港湾的光，上面是密集的生活，四处都是移动的人群。",
+      },
+      "Thailand|2012": {
+        en: "Bangkok arrives through the senses first — heat, colour, traffic, spice, and the small relief of shade after a long walk.",
+        zh: "曼谷总是先通过感官抵达：热度、色彩、车流、香料，以及走很久后躲进阴影里的片刻轻松。",
+      },
+      "Indonesia|2013": {
+        en: "Jakarta was a brief but vivid stop, full of tropical weather, crowded roads, and a city energy that never quite switches off.",
+        zh: "雅加达是短暂却鲜明的一站：热带天气、拥挤道路，以及从不真正关机的城市能量。",
+      },
+    };
+
+    const getCardIdentity = (card) => {
+      const country = card.dataset.country || card.querySelector("strong")?.textContent?.trim() || "Trip";
+      const year = card.dataset.year || card.querySelector("span")?.textContent?.trim() || "";
+      return { country, year, key: `${country}|${year}` };
+    };
+
+    const decorateTravelCards = () => {
+      travelCards.forEach((card) => {
+        const { country, year, key } = getCardIdentity(card);
+        const story = travelStories[key] || {
+          en: `${country} — a stop in the travel archive, kept for the details that only appear after you slow down.`,
+          zh: `${country}——旅途中值得留下的一站，只有慢下来，细节才会出现。`,
+        };
+        card.dataset.storyEn = story.en;
+        card.dataset.storyZh = story.zh;
+        const overlay = card.querySelector(".overlay");
+        if (!overlay || overlay.querySelector(".travel-card-copy")) return;
+        const badge = document.createElement("span");
+        badge.className = "travel-country-badge";
+        badge.textContent = country;
+        card.appendChild(badge);
+        const copy = document.createElement("p");
+        copy.className = "travel-card-copy";
+        copy.textContent = currentLanguage === "zh" ? story.zh : story.en;
+        overlay.insertBefore(copy, overlay.querySelector("strong"));
+      });
+    };
+
+    decorateTravelCards();
+    const travelFilters = Array.from(document.querySelectorAll(".travel-filter"));
+    const travelResultCount = document.getElementById("travel-result-count");
+    const matchesTravelYear = (card, filterYear) => {
+      if (filterYear === "all") return true;
+      const year = (getCardIdentity(card).year || "").slice(0, 4);
+      if (filterYear === "earlier") return Number(year) < 2019;
+      return year === filterYear;
+    };
+    const applyTravelFilter = (filterYear) => {
+      let visibleCount = 0;
+      travelCards.forEach((card) => {
+        const visible = matchesTravelYear(card, filterYear);
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+      travelFilters.forEach((button) => button.classList.toggle("is-active", button.dataset.filterYear === filterYear));
+      if (travelResultCount) travelResultCount.textContent = t("travel.filter.count", { count: visibleCount });
+    };
+    travelFilters.forEach((button) => button.addEventListener("click", () => applyTravelFilter(button.dataset.filterYear || "all")));
+    travelCards.forEach((card) => {
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          card.click();
+        }
+      });
+    });
+    applyTravelFilter("all");
 
     const defaultRoutes = {
       "South Korea": [{ name: "Seoul", lat: 37.5665, lon: 126.978 }],
@@ -692,6 +848,49 @@ if (mapContainer && window.L) {
       Thailand: [{ name: "Bangkok", lat: 13.7563, lon: 100.5018 }],
       Indonesia: [{ name: "Jakarta", lat: -6.2088, lon: 106.8456 }],
     };
+
+    const photoLibrary = {
+      Madrid: ["photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad", "photo-1499856871958-5b9627545d1a"],
+      Toledo: ["photo-1524492412937-b28074a5d7da", "photo-1500534623283-312aade485b7", "photo-1470770841072-f978cf4d019e"],
+      Mallorca: ["photo-1507520092270-6c2a0a3d31f7", "photo-1500534623283-312aade485b7", "photo-1476673160081-cf065607f449"],
+      Porto: ["photo-1555881400-74d7acaacd8b", "photo-1500534623283-312aade485b7", "photo-1499856871958-5b9627545d1a"],
+      Coimbra: ["photo-1524492412937-b28074a5d7da", "photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad"],
+      Lisbon: ["photo-1555881400-74d7acaacd8b", "photo-1502602898657-3e91760cbb34", "photo-1499856871958-5b9627545d1a"],
+      Vienna: ["photo-1516550893923-42d28e5677af", "photo-1513635269975-59663e0ac1ad", "photo-1500534623283-312aade485b7"],
+      Salzburg: ["photo-1499856871958-5b9627545d1a", "photo-1470770841072-f978cf4d019e", "photo-1500534623283-312aade485b7"],
+      Munich: ["photo-1595867818082-083862f3d630", "photo-1513635269975-59663e0ac1ad", "photo-1500534623283-312aade485b7"],
+      Berchtesgaden: ["photo-1464822759023-fed622ff2c3b", "photo-1500534623283-312aade485b7", "photo-1470770841072-f978cf4d019e"],
+      Heidelberg: ["photo-1500534623283-312aade485b7", "photo-1499856871958-5b9627545d1a", "photo-1513635269975-59663e0ac1ad"],
+      Amsterdam: ["photo-1534351590666-13e3e96b5017", "photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad"],
+      Brussels: ["photo-1559113202-c916b8e44343", "photo-1500534623283-312aade485b7", "photo-1499856871958-5b9627545d1a"],
+      London: ["photo-1513635269975-59663e0ac1ad", "photo-1500534623283-312aade485b7", "photo-1519501025264-65ba15a82390"],
+      Rome: ["photo-1529260830199-42c24126f198", "photo-1500534623283-312aade485b7", "photo-1499856871958-5b9627545d1a"],
+      Florence: ["photo-1529260830199-42c24126f198", "photo-1513635269975-59663e0ac1ad", "photo-1499856871958-5b9627545d1a"],
+      Venice: ["photo-1514890547357-a9ee288728e0", "photo-1500534623283-312aade485b7", "photo-1499856871958-5b9627545d1a"],
+      Milan: ["photo-1520175480921-4edfa2983e0f", "photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad"],
+      Bern: ["photo-1500534623283-312aade485b7", "photo-1464822759023-fed622ff2c3b", "photo-1470770841072-f978cf4d019e"],
+      Lucerne: ["photo-1470770841072-f978cf4d019e", "photo-1464822759023-fed622ff2c3b", "photo-1500534623283-312aade485b7"],
+      Jungfraujoch: ["photo-1464822759023-fed622ff2c3b", "photo-1470770841072-f978cf4d019e", "photo-1500534623283-312aade485b7"],
+      Paris: ["photo-1502602898657-3e91760cbb34", "photo-1499856871958-5b9627545d1a", "photo-1500534623283-312aade485b7"],
+      Tokyo: ["photo-1519501025264-65ba15a82390", "photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad"],
+      Taipei: ["photo-1500534623283-312aade485b7", "photo-1519501025264-65ba15a82390", "photo-1470770841072-f978cf4d019e"],
+      "Hong Kong": ["photo-1500534623283-312aade485b7", "photo-1519501025264-65ba15a82390", "photo-1513635269975-59663e0ac1ad"],
+      Bangkok: ["photo-1500534623283-312aade485b7", "photo-1507520092270-6c2a0a3d31f7", "photo-1513635269975-59663e0ac1ad"],
+      Jakarta: ["photo-1500534623283-312aade485b7", "photo-1519501025264-65ba15a82390", "photo-1507520092270-6c2a0a3d31f7"],
+      Seoul: ["photo-1517154421773-0529f29ea451", "photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad"],
+      Singapore: ["photo-1525625293386-3f8f99389edd", "photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad"],
+      Doha: ["photo-1500534623283-312aade485b7", "photo-1507520092270-6c2a0a3d31f7", "photo-1513635269975-59663e0ac1ad"],
+      "Abu Dhabi": ["photo-1500534623283-312aade485b7", "photo-1507520092270-6c2a0a3d31f7", "photo-1513635269975-59663e0ac1ad"],
+      Frankfurt: ["photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad", "photo-1519501025264-65ba15a82390"],
+      Dortmund: ["photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad", "photo-1519501025264-65ba15a82390"],
+      Cologne: ["photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad", "photo-1519501025264-65ba15a82390"],
+      Aachen: ["photo-1500534623283-312aade485b7", "photo-1513635269975-59663e0ac1ad", "photo-1519501025264-65ba15a82390"],
+      Spiez: ["photo-1470770841072-f978cf4d019e", "photo-1464822759023-fed622ff2c3b", "photo-1500534623283-312aade485b7"],
+      Interlaken: ["photo-1464822759023-fed622ff2c3b", "photo-1470770841072-f978cf4d019e", "photo-1500534623283-312aade485b7"],
+      Geneva: ["photo-1500534623283-312aade485b7", "photo-1470770841072-f978cf4d019e", "photo-1464822759023-fed622ff2c3b"],
+    };
+
+    const photoUrl = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=82`;
 
     const parseRoute = (card) => {
       const country = card.dataset.country || card.querySelector("strong")?.textContent?.trim() || "";
@@ -728,8 +927,9 @@ if (mapContainer && window.L) {
             .split("|")
             .map((url) => url.trim())
             .filter(Boolean);
-          if (stop && urls.length > 0) {
-            mapping.set(stop, urls);
+          const curated = photoLibrary[stop]?.map(photoUrl) || [];
+          if (stop && (curated.length > 0 || urls.length > 0)) {
+            mapping.set(stop, curated.length > 0 ? curated : urls);
           }
         });
       return mapping;
@@ -769,7 +969,7 @@ if (mapContainer && window.L) {
       const latlngs = route.map((point) => [point.lat, point.lon]);
       if (latlngs.length > 1) {
         L.polyline(latlngs, {
-          color: "#ffd166",
+          color: "#7b3340",
           weight: 3,
           opacity: 0.9,
         }).addTo(tripLayer);
@@ -780,9 +980,9 @@ if (mapContainer && window.L) {
       route.forEach((point, index) => {
         L.circleMarker([point.lat, point.lon], {
           radius: index === 0 ? 7 : 6,
-          color: "#ffd166",
+          color: "#7b3340",
           weight: 2,
-          fillColor: "#ffd166",
+          fillColor: "#d1b344",
           fillOpacity: 0.75,
         })
           .addTo(tripLayer)
@@ -827,6 +1027,11 @@ if (mapContainer && window.L) {
           ? t("travel.label.cityWalk", { name: route[0].name })
           : t("travel.label.noRoute");
 
+      const story = travelStories[getCardIdentity(card).key];
+      if (tripStory) {
+        tripStory.textContent = story ? (currentLanguage === "zh" ? story.zh : story.en) : "";
+      }
+
       tripPhotoGrid.innerHTML = route
         .map((point) => {
           const urls = photoMap.get(point.name) || [fallbackImage];
@@ -860,6 +1065,12 @@ if (mapContainer && window.L) {
     }
 
     window.addEventListener("languagechange", () => {
+      travelCards.forEach((card) => {
+        const copy = card.querySelector(".travel-card-copy");
+        if (copy) {
+          copy.textContent = currentLanguage === "zh" ? card.dataset.storyZh : card.dataset.storyEn;
+        }
+      });
       if (mapPhotoViewerTitle && !mapPhotoViewer.hidden && mapPhotoViewerTitle.textContent) {
         const cityName = mapPhotoViewerTitle.textContent.replace(/\s*(photos|的照片)\s*$/, "");
         mapPhotoViewerTitle.textContent = t("travel.label.photos", { name: cityName });
@@ -877,10 +1088,15 @@ if (mapContainer && window.L) {
         if (tripYear) {
           tripYear.textContent = t("travel.label.routePreview");
         }
-        if (tripRoute) {
-          tripRoute.textContent = t("travel.detail.placeholderBody");
-        }
+      if (tripRoute) {
+        tripRoute.textContent = t("travel.detail.placeholderBody");
       }
+      if (tripStory) {
+        tripStory.textContent = "";
+      }
+      }
+      const activeFilter = travelFilters.find((button) => button.classList.contains("is-active"));
+      if (activeFilter) applyTravelFilter(activeFilter.dataset.filterYear || "all");
     });
 
     // Keep world overview by default; only drill down after user clicks a card.

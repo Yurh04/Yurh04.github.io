@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Jack Yu's personal portfolio: software engineering, data and algorithms, football, travel, and notes."
+      content="Jack Yu's personal portfolio: software engineering, intelligent products, football, travel, and notes."
     />
     <title>Jack Yu | Portfolio</title>
     <script src="./js/theme-init.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/liquid-glass.css?v=4" />
-  </head>
+    <link rel="stylesheet" href="./css/site.css?v=20261009" />
+</head>
   <body data-title-key="title.home">
     <header class="topbar">
       <div class="inner">
-        <div class="logo" data-i18n="index.logo">Jack Yu / Portfolio</div>
+        <a class="logo" href="./" aria-label="Jack Yu · Home">Jack Yu<span aria-hidden="true">.</span></a>
         <div class="topbar-actions">
           <nav class="nav">
             <a class="is-active" href="./index.html" data-i18n="common.nav.home">Home</a>
@@ -43,131 +42,38 @@
     </header>
 
     <main class="container">
-      <section class="hero" data-reveal>
-        <div class="hero-content">
-          <h1 class="hero-title">Jack Yu</h1>
-          <p class="hero-subtitle" data-i18n="index.hero.subtitle">SE Student @ BUAA | Data &amp; Algo Intern</p>
-          <p class="hero-intro" data-i18n="index.hero.intro">
-            I care about the craft behind reliable systems, the intelligence inside useful products, and the stories
-            we collect beyond the screen.
-          </p>
-          <div class="hero-actions">
-            <a class="hero-cta" href="./about/" data-i18n="index.hero.cta">Meet Jack</a>
-            <a class="hero-link" href="#explore" data-i18n="index.hero.secondary">Explore the portfolio</a>
-          </div>
-          <div class="socials">
-            <a href="https://github.com/Yurh04" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.74.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.12-1.52-1.12-1.52-.92-.65.07-.63.07-.63 1.02.07 1.55 1.08 1.55 1.08.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.55-1.14-4.55-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.03a9.3 9.3 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.07.36.32.68.96.68 1.94 0 1.4-.01 2.53-.01 2.87 0 .27.18.6.69.49 3.96-1.36 6.83-5.2 6.83-9.74C22 6.58 17.52 2 12 2Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-            <a href="mailto:yrhrealmadrid@163.com" aria-label="Email">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="m22 7-10 7L2 7"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </a>
-          </div>
+      <section class="home-intro">
+        <svg class="hero-pitch" viewBox="0 0 680 440" fill="none" aria-hidden="true">
+          <g stroke="currentColor" stroke-width="2"><rect x="20" y="20" width="640" height="400" rx="2"/><path d="M340 20v400M20 120h100v200H20m640-200H560v200h100M20 170h40v100H20m640-100h-40v100h40"/><circle cx="340" cy="220" r="64"/><circle cx="340" cy="220" r="4" fill="currentColor"/></g>
+        </svg>
+        <div class="home-copy">
+          <p class="intro-location" data-i18n="index.hero.subtitle">Software engineering student at BUAA</p>
+          <h1><span data-i18n="home.hello">Hello, I'm</span><br>Jack Yu<span class="name-dot">.</span></h1>
+          <p class="intro-body" data-i18n="home.intro">I study software engineering at Beihang. This is where I keep what I build, what I think about, and a few things from life outside the screen.</p>
+          <a class="text-link" href="./about/" data-i18n="home.about">A little more about me ↗</a>
+          <div class="home-socials"><a href="https://github.com/Yurh04" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:yrhrealmadrid@163.com">Email ↗</a></div>
+          <a class="midfield-tag" href="./football/"><span class="position-dot" aria-hidden="true"></span><span data-i18n="home.midfield">CM · 中场 / Madridista</span><span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-interests" aria-label="Interests">
-          <div class="interest-copy">
-            <span class="interest-label" data-i18n="index.quick.title">Current coordinates</span>
-            <p data-i18n="index.quick.body">
-              Building with <span class="emph">AI</span>, supporting <span class="emph">Real Madrid</span>, and staying
-              curious through <span class="emph">travel</span>.
-            </p>
-          </div>
-          <div class="interest-list">
-              <div class="chip chip-media">
-                <img
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><rect x='6' y='10' width='52' height='34' rx='6' stroke='%23a6fff1' stroke-width='3'/><rect x='14' y='18' width='36' height='18' rx='2' fill='%23a6fff1' fill-opacity='0.2'/><rect x='24' y='46' width='16' height='4' rx='2' fill='%23a6fff1'/></svg>"
-                  alt="Computer"
-                />
-                <span data-i18n="index.quick.ai">AI</span>
-              </div>
-              <div class="chip chip-media">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"
-                  alt="Real Madrid"
-                  loading="lazy"
-                />
-                <span data-i18n="index.quick.madrid">Real Madrid</span>
-              </div>
-              <div class="chip chip-media">
-                <img
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'><path d='M6 34c10-8 22-12 36-12' stroke='%23a6fff1' stroke-width='3' stroke-linecap='round'/><path d='M40 22l18 6-14 10-4-16z' fill='%23a6fff1' fill-opacity='0.35' stroke='%23a6fff1' stroke-width='2' stroke-linejoin='round'/><circle cx='20' cy='44' r='4' fill='%23a6fff1' fill-opacity='0.35' stroke='%23a6fff1' stroke-width='2'/></svg>"
-                  alt="Travel"
-                />
-                <span data-i18n="index.quick.travel">Travel</span>
-              </div>
-          </div>
+        <figure class="home-photo"><img src="./assets/favorites/ski-triptych.jpeg" alt="滑雪时的三个瞬间 / Three moments on the slopes" fetchpriority="high" width="600" height="650"><figcaption><span data-i18n="home.photo">离开屏幕，去雪地里。</span><a href="./favorites/" data-i18n="home.photoLink">生活相册 ↗</a></figcaption></figure>
+      </section>
+      <section class="home-notebook" id="explore">
+        <div class="notebook-heading"><h2 data-i18n="home.pages">这里都放了些什么</h2><p data-i18n="home.pagesBody">一些笔记，也有一些生活。</p></div>
+        <div class="home-directory">
+          <a href="./devlog/"><div><h3 data-i18n="common.nav.thoughts">想法</h3><p data-i18n="home.notes">关于机器学习、系统和做产品的笔记。</p></div><span aria-hidden="true">↗</span></a>
+          <a href="./travel/"><div><h3 data-i18n="common.nav.travel">旅行</h3><p data-i18n="home.travel">走过的城市，留在地图上的路线。</p></div><span aria-hidden="true">↗</span></a>
+          <a href="./favorites/"><div><h3 data-i18n="common.nav.favorites">我的热爱</h3><p data-i18n="home.favorites">滑雪、C 罗，还有游戏里的几个瞬间。</p></div><span aria-hidden="true">↗</span></a>
         </div>
       </section>
-
-      <section class="section explore-section" id="explore" data-reveal>
-        <div class="section-heading">
-          <h2 class="section-title"><span aria-hidden="true"></span><span data-i18n="index.explore.title">A portfolio in five directions</span></h2>
-          <p data-i18n="index.explore.body">
-            Work, interests, and places each reveal a different part of how I think and what keeps me moving.
-          </p>
-        </div>
-        <div class="page-grid">
-          <a class="page-card" href="./about/">
-            <span class="page-index">01</span>
-            <h3 data-i18n="index.card.about.title">About Me</h3>
-            <p data-i18n="index.card.about.body">The engineering mindset, skills, and interests behind the work.</p>
-          </a>
-          <a class="page-card" href="./favorites/">
-            <span class="page-index">02</span>
-            <h3 data-i18n="index.card.favorites.title">My Favorites</h3>
-            <p data-i18n="index.card.favorites.body">Skiing, football culture, Ronaldo, and competitive gaming.</p>
-          </a>
-          <a class="page-card" href="./devlog/">
-            <span class="page-index">03</span>
-            <h3 data-i18n="index.card.thoughts.title">Thoughts</h3>
-            <p data-i18n="index.card.thoughts.body">Short notes on machine learning, autonomy, and building useful systems.</p>
-          </a>
-          <a class="page-card" href="./football/">
-            <span class="page-index">04</span>
-            <h3 data-i18n="index.card.football.title">Football (Hala Madrid)</h3>
-            <p data-i18n="index.card.football.body">Real Madrid results, fixtures, and the rituals of being a Madridista.</p>
-          </a>
-          <a class="page-card" href="./travel/">
-            <span class="page-index">05</span>
-            <h3 data-i18n="index.card.travel.title">Travel Gallery</h3>
-            <p data-i18n="index.card.travel.body">A map-led collection of routes, photographs, and moments on the road.</p>
-          </a>
-        </div>
-      </section>
+      <a class="home-football" href="./football/">
+        <img src="./assets/favorites/guoan-scoreboard-2.jpeg" alt="球场看台 / A view from the stands" loading="lazy" width="1200" height="600">
+        <div><svg class="football-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/><path d="m32 20 12 9-5 14H25l-5-14zM32 4v16M6 23l14 6m-5 26 10-12m24 12L39 43m19-20-14 6" fill="none" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="common.nav.football">足球</span><h2>Hala Madrid.</h2><p data-i18n="home.football">场上踢中场，场下看皇马。聊聊足球 ↗</p></div>
+      </a>
 
       <div class="footer" data-i18n="common.footer.tech">
-        Built with HTML + CSS + Vanilla JS · Glassmorphism UI
+        Jack Yu · Thanks for stopping by.
       </div>
     </main>
 
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js?v=20261009"></script>
   </body>
 </html>
